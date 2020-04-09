@@ -21,10 +21,7 @@
 </head>
 <body>
 <div id="app">
-    <div>
-        <router-view></router-view>
-    </div>
+  @yield('content')
 </div>
-<script src="js/app.js"></script>
 </body>
 </html>
