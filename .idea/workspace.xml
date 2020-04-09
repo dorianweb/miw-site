@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db1e98ab-2abf-4041-881d-5b255072bfca" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/js/components/App.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/NavbarComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/ExampleComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/router/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/NavbarComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NavbarComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.mix.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.mix.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +188,7 @@
       <updated>1586403432817</updated>
       <workItem from="1586403435293" duration="2462000" />
       <workItem from="1586406402942" duration="3479000" />
-      <workItem from="1586427912411" duration="2755000" />
+      <workItem from="1586427912411" duration="13479000" />
     </task>
     <servers />
   </component>
@@ -213,13 +209,25 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586403488574" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1586426700162">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1586453291248">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1586426700162" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1586453291248" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1586404993372">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586404993372" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/app.js</url>
+          <line>9</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

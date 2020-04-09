@@ -24,4 +24,5 @@
   @yield('content')
 </div>
 </body>
+@include('sprite')
 </html>

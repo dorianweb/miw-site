@@ -1,13 +1,23 @@
 <template>
-<div>
-    <h1>Hello</h1>
-    <router-view></router-view>
-</div>
+        <div>
+            <NavbarComponent ></NavbarComponent>
+            <router-view></router-view>
+        </div>
+
 </template>
 
 <script>
+    import NavbarComponent from "./NavbarComponent";
     export default {
-        name: "App"
+        name: "App",
+        components: {
+            NavbarComponent
+        },
+        data() {
+            return {
+
+            }
+        }
     }
 </script>
 
