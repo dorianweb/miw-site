@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/NavbarComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NavbarComponent.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -187,7 +188,7 @@
       <workItem from="1586403435293" duration="2462000" />
       <workItem from="1586406402942" duration="3479000" />
       <workItem from="1586427912411" duration="17757000" />
-      <workItem from="1586473851845" duration="3563000" />
+      <workItem from="1586473851845" duration="18874000" />
     </task>
     <servers />
   </component>
@@ -201,6 +202,10 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
+    <state x="361" y="70" key="#Deployment" timestamp="1586517349698">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="70" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1586517349698" />
     <state x="510" y="28" key="#com.jetbrains.php.refactoring.extractMethod.PhpExtractMethodDialog#function0" timestamp="1586406493294">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -209,6 +214,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="277" y="54" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586403488574" />
+    <state x="407" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1586515454885">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="407" y="27" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.824@0.0.1536.824" timestamp="1586515454885" />
+    <state x="463" y="149" width="609" height="526" key="find.popup" timestamp="1586518403679">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="463" y="149" width="609" height="526" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1586518403679" />
     <state x="425" y="187" key="run.anything.popup" timestamp="1586453291248">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

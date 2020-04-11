@@ -5,14 +5,24 @@ export default {
 
     routes: [
         {
-            path: '/',
-            name: 'home',
+            path: '/environnement',
+            name: 'Environement',
             component:ExampleComponent,
         },
 
         {
-            path: '/about',
-            name: 'about',
+            path: '/licence',
+            name: 'Licence',
+            component:ExampleComponent,
+        },
+        {
+            path: '/contact',
+            name: 'Contact',
+            component:ExampleComponent,
+        },
+        {
+            path: '/students',
+            name: 'Etudiants',
             component:ExampleComponent,
         },
     ]
