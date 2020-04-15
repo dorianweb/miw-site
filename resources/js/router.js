@@ -1,5 +1,5 @@
 import ExampleComponent from "./components/ExampleComponent";
-import NavbarComponent from "./components/NavbarComponent";
+
 export default {
     mode: 'history',
 
