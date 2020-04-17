@@ -2,34 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db1e98ab-2abf-4041-881d-5b255072bfca" name="Default Changelist" comment="creation du FooterComponent.vue">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/SocialController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Social.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2020_04_12_145114_create_socials_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/seeds/SocialsTableSeeder.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/svg/arrow.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/svg/cross.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/svg/facebook.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/svg/instagram.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/svg/linkedin-letters.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/svg/logo-amu.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/svg/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/svg/menu.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/svg/twitter.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/AccueilComponent.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/components/FooterComponent.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/accueil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/cours-design.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/femme-ordi.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/iMac2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/stuff.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/svg/accueil-1.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/svg/desktop.ini" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/svg/iMac2.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/AccueilComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AccueilComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/App.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/FooterComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FooterComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/components/NavbarComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NavbarComponent.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/sprite.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sprite.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,7 +174,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/svg" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -194,6 +186,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\miw-site\public\img" />
       <recent name="C:\wamp64\www\miw-site\public\img\svg" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -232,7 +225,16 @@
       <workItem from="1586406402942" duration="3479000" />
       <workItem from="1586427912411" duration="17757000" />
       <workItem from="1586473851845" duration="18874000" />
+      <workItem from="1587117912245" duration="6253000" />
     </task>
+    <task id="LOCAL-00001" summary="creation du FooterComponent.vue">
+      <created>1586987735418</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1586987735418</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +245,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -289,25 +293,13 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="463" y="149" width="609" height="526" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1586518403679" />
-    <state x="425" y="187" key="run.anything.popup" timestamp="1586986324470">
+    <state x="425" y="187" key="run.anything.popup" timestamp="1587050710196">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1586986324470" />
+    <state x="425" y="187" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1587050710196" />
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1586404993372">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1586404993372" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/js/components/FooterComponent.vue</url>
-          <line>190</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

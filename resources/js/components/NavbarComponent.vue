@@ -1,46 +1,44 @@
 <template>
 
-    <div>
-        <nav class="menu">
-            <div :class=" isScrolling?'menu_head scrollEffect':'menu_head' ">
-                <router-link to="/" class="menu_head_logo">
-                    <svg>
-                        <use xlink:href="#logo"></use>
-                    </svg>
-                </router-link>
-                <div v-if="screen>=1024" class="menu_body">
-                    <ul class="menu_content">
-                        <li v-for="route in  routes" :key="route.path" class="link">
-                            <div class="link_bg"></div>
-                            <router-link :to="route.path" class="link_item">
-                                {{route.name}}
-                            </router-link>
-                        </li>
-                    </ul>
-                </div>
-                <label v-if="screen<1024" class="menu_head_icon" for="menutoggle">
-                    <svg v-show="!isMobileMenuOpen">
-                        <use xlink:href="#menu"></use>
-                    </svg>
-                    <svg v-show="isMobileMenuOpen">
-                        <use xlink:href="#cross"></use>
-                    </svg>
-                </label>
-                <input type="checkbox" id="menutoggle" v-model="isMobileMenuOpen" style="display:none">
-            </div>
-            <div v-if="screen<1024&&isMobileMenuOpen" class="menu_body">
+
+    <nav class="menu">
+        <div :class=" isScrolling?'menu_head scrollEffect':'menu_head' ">
+            <router-link to="/" class="menu_head_logo">
+                <svg>
+                    <use xlink:href="#logo"></use>
+                </svg>
+            </router-link>
+            <div v-if="screen>=1024" class="menu_body">
                 <ul class="menu_content">
                     <li v-for="route in  routes" :key="route.path" class="link">
                         <div class="link_bg"></div>
-                        <router-link v-on:click.native="toggleMobileMenu" :to="route.path" class="link_item">
+                        <router-link :to="route.path" class="link_item">
                             {{route.name}}
                         </router-link>
                     </li>
                 </ul>
             </div>
-        </nav>
-        <div class="test"></div>
-    </div>
+            <label v-if="screen<1024" class="menu_head_icon" for="menutoggle">
+                <svg v-show="!isMobileMenuOpen">
+                    <use xlink:href="#menu"></use>
+                </svg>
+                <svg v-show="isMobileMenuOpen">
+                    <use xlink:href="#cross"></use>
+                </svg>
+            </label>
+            <input type="checkbox" id="menutoggle" v-model="isMobileMenuOpen" style="display:none">
+        </div>
+        <div v-if="screen<1024&&isMobileMenuOpen" class="menu_body">
+            <ul class="menu_content">
+                <li v-for="route in  routes" :key="route.path" class="link">
+                    <div class="link_bg"></div>
+                    <router-link v-on:click.native="toggleMobileMenu" :to="route.path" class="link_item">
+                        {{route.name}}
+                    </router-link>
+                </li>
+            </ul>
+        </div>
+    </nav>
 
 </template>
 
@@ -93,7 +91,9 @@
 
     .menu {
         width: 100%;
-        position: fixed;
+        position: sticky;
+        top: 0;
+        z-index: 100;
     }
 
     .menu_head {
@@ -104,6 +104,7 @@
         align-items: center;
         justify-content: space-between;
         border-bottom: black solid 1px;
+        background-color: #2198a2;
     }
 
     .scrollEffect {
@@ -163,12 +164,6 @@
         text-align: center;
         font-size: 1.5em;
         color: white;
-    }
-
-    .test {
-        width: 100%;
-        height: 700px;
-        background-color: black;
     }
 
     @media screen and (min-width: 750px) {
