@@ -1,5 +1,5 @@
 @extends('layouts.app')
 
 @section('content')
-<App></App>
+<App img_url="{{\Illuminate\Support\Facades\URL::asset('img')}}" ></App>
 @endsection

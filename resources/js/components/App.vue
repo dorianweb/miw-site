@@ -1,10 +1,10 @@
 <template>
-        <div>
-            <NavbarComponent></NavbarComponent>
-            <router-view></router-view>
-            <FooterComponent :socials="socials"></FooterComponent>
+    <div>
+        <NavbarComponent></NavbarComponent>
+        <router-view :img_url="img"></router-view>
+        <FooterComponent :socials="socials"></FooterComponent>
 
-        </div>
+    </div>
 
 </template>
 
@@ -21,9 +21,11 @@
         mounted() {
             this.getSocial();
         },
+        props: ['img_url'],
         data() {
             return {
-                socials: ''
+                socials: '',
+                img: this.img_url,
             }
         },
         methods: {

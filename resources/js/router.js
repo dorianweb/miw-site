@@ -1,4 +1,5 @@
 import ExampleComponent from "./components/ExampleComponent";
+import AccueilComponent from "./components/AccueilComponent";
 
 export default {
     mode: 'history',
@@ -8,6 +9,10 @@ export default {
             path: '/environnement',
             name: 'Environement',
             component:ExampleComponent,
+        },  {
+            path: '/',
+            name: 'Accueil',
+            component:AccueilComponent,
         },
 
         {
