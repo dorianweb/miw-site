@@ -2,26 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="db1e98ab-2abf-4041-881d-5b255072bfca" name="Default Changelist" comment="creation du FooterComponent.vue">
-      <change afterPath="$PROJECT_DIR$/public/img/accueil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/cours-design.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/femme-ordi.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/iMac2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/stuff.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/svg/accueil-1.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/svg/desktop.ini" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/svg/iMac2.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/AccueilComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AccueilComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/App.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/App.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/FooterComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/FooterComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/NavbarComponent.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/NavbarComponent.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/sprite.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/sprite.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
