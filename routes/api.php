@@ -20,5 +20,6 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::namespace('Api')->group(function () {
     Route::apiResource('socials', 'SocialController');
+    Route::apiResource('dates', 'DateController');
 });
 

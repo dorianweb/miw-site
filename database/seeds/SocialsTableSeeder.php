@@ -37,5 +37,9 @@ class SocialsTableSeeder extends Seeder
             'svg_name' => 'logo-amu',
             'activ' => '0',
         ]);
+        DB::table('dates')->insert([
+            'name' => 'Journée porte ouverte 2020',
+            'date' =>  DateTime::createFromFormat('U',1615377600, new DateTimeZone('UTC'))
+        ]);
     }
 }

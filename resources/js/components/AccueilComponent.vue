@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="main">
         <div v-if="screen<1024" class="accueil">
             <div class="logo_text">
                 <div class="logo">
@@ -131,17 +131,32 @@
             </div>
         </div>
         <div class="boxes">
-            <div class="box"  :style="{backgroundImage:`url(${img}/stuff.png)`}">
+            <div class="box" :style="{backgroundImage:`url(${img}/stuff.png)`}">
                 <h3>Travail de groupe</h3>
             </div>
-            <div class="box" :style="{backgroundImage:`url(${img}/cours-design.png)`}" >
+            <div class="box" :style="{backgroundImage:`url(${img}/cours-design.png)`}">
 
                 <h3>Des enseignants issus du monde professionnel</h3>
             </div>
 
-            <div class="box " :style="{backgroundImage:`url(${img}/femme-ordi.png)`}" >
+            <div class="box " :style="{backgroundImage:`url(${img}/femme-ordi.png)`}">
 
                 <h3>Les dernière technologie</h3>
+            </div>
+        </div>
+        <div class="banniere_container" :style="{backgroundImage:`url(${img}/mountain.png)`}">
+
+            <div class="banniere">
+                <div>
+                    prochaine date :
+                </div>
+                <h3>
+                    {{new Date(dates.date).toLocaleDateString('fr-FR', {day: 'numeric', month: 'numeric', year:
+                    'numeric'}).replace(/ /g, '/') }}
+                </h3>
+                <div class="bold">
+                    {{date?date.name:dates.name}}
+                </div>
             </div>
         </div>
     </div>
@@ -150,7 +165,7 @@
 <script>
     export default {
         name: "AccueilComponent",
-        props: ['img_url'],
+        props: ['img_url', 'dates'],
         methods: {
             sizeHandler() {
                 this.screen = window.innerWidth;
@@ -162,13 +177,21 @@
         data() {
             return {
                 img: this.img_url,
+                date: this.dates,
                 screen: window.innerWidth,
+
+
             }
         }
     }
 </script>
 
 <style scoped>
+    .main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
     /* ecran 1   */
     img, svg {
@@ -248,24 +271,46 @@
     }
 
     /*ecran 3 */
-.box{
-    width: 100%;
-    height: 325px;
-    background-repeat: no-repeat;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    background-size:110%,cover;
-}
-.box >h3{
-    width: 100%;
-    height: 70px;
-    margin: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: linear-gradient(90deg, #7fcff5bd, #4ca6bd94,#1cb1badb);
-}
+    .box {
+        width: 100%;
+        height: 325px;
+        background-repeat: no-repeat;
+        display: flex;
+        margin-top: 20px;
+        flex-direction: column;
+        justify-content: flex-end;
+        background-size: cover;
+    }
+
+    .box > h3 {
+        width: 100%;
+        height: 70px;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(90deg, #7fcff5bd, #4ca6bd94, #1cb1badb);
+    }
+
+    .banniere_container {
+        width: 100%;
+        height: 145px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.1em;
+        margin-top: 25px;
+    }
+
+    .banniere {
+        width: 265px;
+        height: 80%;
+        text-align: center;
+        background-color: #212529a6;
+
+    }
+
 
     @media screen and (min-width: 768px) {
 
@@ -280,6 +325,24 @@
 
         .text_lp {
             margin-top: 5px;
+        }
+
+        /* ecran 3*/
+        .boxes {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+        }
+
+        .box {
+            width: 350px;
+        }
+
+        .banniere {
+            width: 365px;
         }
     }
 
@@ -341,13 +404,13 @@
         }
 
         .argument {
-            width: 69%;
-            font-size: 0.6em;
+            width: 70%;
+            font-size: 0.7em;
             position: absolute;
-            top: 23%;
+            top: 10%;
             right: 0;
             text-align: left;
-            padding: 15px 25px;
+            padding: 10px 20px;
         }
 
         .item_btn {
@@ -366,7 +429,7 @@
         }
 
         .item2 .argument {
-            width: 70%;
+            width: 69%;
             top: 3px;
             left: 0;
             font-size: 0.7em;
@@ -385,6 +448,49 @@
             left: 0;
         }
 
+        /*ecran 3*/
+        .box {
+            width: 30%;
+            height: 190px;
+
+        }
+
+        .box > h3 {
+            font-size: 1.5em;
+        }
+
+        .banniere_container {
+            height: 195px;
+        }
+
+        .banniere {
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 60%;
+        }
     }
+
+    @media screen and (min-width: 1400px) {
+        .presentation {
+            font-size: 1.1em;
+        }
+
+        .p2 {
+            top: 385px;
+        }
+
+        .argument {
+            padding: 21px 38px;
+            font-size: 1em;
+        }
+
+        .item_group_btn {
+            top: 55%;
+        }
+    }
+
 
 </style>
