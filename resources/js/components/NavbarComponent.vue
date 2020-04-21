@@ -11,8 +11,7 @@
             <div v-if="screen>=1024" class="menu_body">
                 <ul class="menu_content">
                     <li v-for="route in  routes" :key="route.path" class="link">
-                        <div class="link_bg"></div>
-                        <router-link :to="route.path" class="link_item">
+                        <router-link :to="route.path" :class=" isScrolling?'link_item scrollEffect2':'link_item' ">
                             {{route.name}}
                         </router-link>
                     </li>
@@ -31,8 +30,8 @@
         <div v-if="screen<1024&&isMobileMenuOpen" class="menu_body">
             <ul class="menu_content">
                 <li v-for="route in  routes" :key="route.path" class="link">
-                    <div class="link_bg"></div>
-                    <router-link v-on:click.native="toggleMobileMenu" :to="route.path" class="link_item">
+                    <router-link v-on:click.native="toggleMobileMenu" :to="route.path"
+                                 :class=" isScrolling?'link_item scrollEffect':'link_item' ">
                         {{route.name}}
                     </router-link>
                 </li>
@@ -57,7 +56,9 @@
             },
             scrollcss() {
                 this.isScrolling = this.scrollPosition <= pageYOffset;
+                this.isMobileMenuOpen = this.scrollPosition >= pageYOffset&&this.isMobileMenuOpen;
                 this.scrollPosition = window.pageYOffset;
+
             },
             sizeHandler() {
                 this.screen = window.innerWidth;
@@ -103,12 +104,12 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        border-bottom: black solid 1px;
         background-color: #2198a2;
+        box-shadow: 0px 1px 10px #bfbfbf;
     }
 
     .scrollEffect {
-        background-color: rgba(97, 135, 179, 0.43);
+        background-color: rgba(97, 135, 179, 0.43) !important;
     }
 
     .menu_head_logo {
@@ -135,35 +136,32 @@
         width: 100%;
         position: absolute;
         right: 0;
-        margin-top: 10px;
     }
 
     .link {
         display: flex;
         width: 100%;
-        height: 50px;
+        height: 35px;
         position: relative;
-        margin-bottom: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
-    .link_bg {
-        width: 100%;
-        height: 40px;
-        position: absolute;
-        background-color: #2198a2;
-    }
 
     .link_item {
         width: 100%;
-        height: 40px;
-        position: absolute;
+        height: 100%;
         background-color: #76c8eb;
-        top: 6px;
-        left: 8px;
         text-decoration: none;
         text-align: center;
-        font-size: 1.5em;
+        font-size: 1.3em;
         color: white;
+        transition-duration: 1s;
+    }
+
+    .scrollEffect2 {
+        background-color: rgba(97, 135, 179, 0.55);
     }
 
     @media screen and (min-width: 750px) {
@@ -182,6 +180,7 @@
             display: flex;
             justify-content: flex-end;
             margin: 0;
+            align-items: center;
 
         }
 
@@ -189,31 +188,25 @@
             width: 170px;
             height: 100%;
             position: unset;
+            padding: 2px;
             margin: 0 10px;
         }
 
         .link_item {
+            padding: 0px 10px;
             position: unset;
             font-size: 1.3em;
             width: 100%;
             border: white solid 2px;
+            border-radius: 20px;
             background-color: transparent;
             opacity: 0.7;
         }
 
-        .link_bg {
-            display: none;
-        }
-
         .link_item:hover {
             opacity: 1;
+            box-shadow: white;
+            font-size: 1.4em;
         }
-
-        .link_item:hover {
-            background-color: white;
-            color: black;
-            border: none;
-        }
-
     }
 </style>

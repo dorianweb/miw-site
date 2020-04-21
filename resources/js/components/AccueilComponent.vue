@@ -105,7 +105,7 @@
             </div>
             <div class="argument">
                 <h3>Pourquoi choisir cette formation ?</h3>
-                <p class="paragraphe">
+                <p class="paragraphe p4">
                     Cette Licence professionnelle forme des diplômés dans les secteurs très demandeurs et porteurs du
                     développement
                     web, d'applications mobiles et d'objets connectés.
@@ -240,12 +240,14 @@
     .accueil_img {
         width: 100%;
         margin-top: 30px;
+        cursor: default;
     }
 
     /* ecran 2 */
     .presentation {
         margin-top: 25px;
         width: 92%;
+        letter-spacing: 1px;
         text-align: center;
     }
 
@@ -266,8 +268,8 @@
         height: 45px;
         width: 70%;
         margin: 10px 15%;
-        border: gray 1px solid;
         border-radius: 18px;
+        border: none;
     }
 
     /*ecran 3 */
@@ -339,6 +341,7 @@
 
         .box {
             width: 350px;
+            text-align: center;
         }
 
         .banniere {
@@ -449,9 +452,14 @@
         }
 
         /*ecran 3*/
+        .boxes {
+            width: 100%;
+        }
+
         .box {
             width: 30%;
             height: 190px;
+            margin-top: 0;
 
         }
 
@@ -474,12 +482,43 @@
     }
 
     @media screen and (min-width: 1400px) {
+
+        .logo {
+            width: 69%;
+        }
+
+        .logo_text {
+            width: 375px;
+        }
+
+        .text_lp {
+            font-size: 1.8em;
+        }
+
+        .text_description {
+            font-size: 2.2em;
+        }
+
         .presentation {
             font-size: 1.1em;
+            width: 44%;
+        }
+
+        .p1 {
+            top: 325px;
         }
 
         .p2 {
-            top: 385px;
+            top: 450px;
+        }
+
+        .p4 {
+            font-size: 1.5em;
+        }
+
+        .item_btn {
+            font-size: 1.3em;
+            width: 275px;
         }
 
         .argument {
@@ -488,9 +527,11 @@
         }
 
         .item_group_btn {
-            top: 55%;
+            top: 205px !important;
+        }
+
+        .box {
+            height: 325px;
         }
     }
-
-
 </style>
