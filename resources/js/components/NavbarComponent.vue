@@ -159,6 +159,9 @@
         color: white;
         transition-duration: 1s;
     }
+    .link_item:active{
+        background-color: rgb(72, 161, 235)git ;
+    }
 
     .scrollEffect2 {
         background-color: rgba(97, 135, 179, 0.55);
