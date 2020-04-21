@@ -83,6 +83,8 @@
     .footer {
         width: 100%;
         height: 300px;
+        position: relative;
+        bottom: -25px;
     }
 
     .bande_verte {
