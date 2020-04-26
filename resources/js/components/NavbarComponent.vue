@@ -64,11 +64,6 @@
             },
             scrollcss() {
                 this.isScrolling = this.scrollPosition <= pageYOffset;
-<<<<<<< HEAD
-                this.isMobileMenuOpen = this.scrollPosition >= pageYOffset && this.isMobileMenuOpen;
-=======
-                this.isMobileMenuOpen = this.scrollPosition >= pageYOffset;
->>>>>>> fb33f9f1df9a5ed557ca3a8dea102be0b29d1a5f
                 this.scrollPosition = window.pageYOffset;
 
             },
@@ -178,13 +173,6 @@
         transition-duration: 1s;
     }
 
-<<<<<<< HEAD
-    .link_item:active {
-        background-color: rgb(72, 161, 235);
-    }
-
-=======
->>>>>>> fb33f9f1df9a5ed557ca3a8dea102be0b29d1a5f
     .scrollEffect2 {
         background-color: rgba(97, 135, 179, 0.55);
     }
