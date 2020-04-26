@@ -202,6 +202,9 @@
     * {
         color: white;
     }
+    *::selection{
+        background-color: #38c172;
+    }
 
     .accueil {
         width: 100%;
@@ -368,26 +371,25 @@
         .presentation {
             position: absolute;
             text-align: left;
-            font-size: 0.7em;
-            width: 40%;
+            font-size: 0.8em;
+            width: 45%;
             margin: 0;
+            left: 50px;
         }
 
         .p1 {
-            top: 275px;
-            left: 65px;
-        }
+            top: 265px;
 
+        }
         .p2 {
-            top: 350px;
-            left: 65px;
+            top: 365px;
         }
 
         .logo_text {
             position: absolute;
             width: 240px;
-            top: 90px;
-            left: 65px;
+            top: 80px;
+            left:50px;
             margin: 0;
         }
 
@@ -408,7 +410,7 @@
 
         .argument {
             width: 70%;
-            font-size: 0.7em;
+            font-size: 0.8em;
             position: absolute;
             top: 10%;
             right: 0;
@@ -419,7 +421,7 @@
         .item_btn {
             position: absolute;
             width: 220px;
-            top: 84%;
+            top: 285px;
             right: 5%;
             margin: 0;
         }
@@ -489,6 +491,7 @@
 
         .logo_text {
             width: 375px;
+            left: 65px;
         }
 
         .text_lp {
@@ -500,16 +503,17 @@
         }
 
         .presentation {
-            font-size: 1.1em;
+            font-size: 1.2em;
             width: 44%;
+            left: 65px;
         }
 
         .p1 {
-            top: 325px;
+            top: 335px;
         }
 
         .p2 {
-            top: 450px;
+            top: 455px;
         }
 
         .p4 {
@@ -517,13 +521,13 @@
         }
 
         .item_btn {
-            font-size: 1.3em;
-            width: 275px;
+            font-size: 1.4em;
+            top: 400px;
         }
 
         .argument {
             padding: 21px 38px;
-            font-size: 1em;
+            font-size: 1.1em;
         }
 
         .item_group_btn {

@@ -3,11 +3,19 @@
 
     <nav class="menu">
         <div :class=" isScrolling?'menu_head scrollEffect':'menu_head' ">
-            <router-link to="/" class="menu_head_logo">
+            <div class="menu_head_logo">
+            <router-link to="/" class="menu_head_logo_item">
                 <svg>
                     <use xlink:href="#logo"></use>
                 </svg>
             </router-link>
+                <a  href="https://iut.univ-amu.fr/" class="menu_head_logo_item">
+                    <svg>
+                        <use xlink:href="#logo-amu"></use>
+                    </svg>
+                </a>
+            </div>
+
             <div v-if="screen>=1024" class="menu_body">
                 <ul class="menu_content">
                     <li v-for="route in  routes" :key="route.path" class="link">
@@ -56,7 +64,7 @@
             },
             scrollcss() {
                 this.isScrolling = this.scrollPosition <= pageYOffset;
-                this.isMobileMenuOpen = this.scrollPosition >= pageYOffset&&this.isMobileMenuOpen;
+                this.isMobileMenuOpen = this.scrollPosition >= pageYOffset && this.isMobileMenuOpen;
                 this.scrollPosition = window.pageYOffset;
 
             },
@@ -113,11 +121,17 @@
     }
 
     .menu_head_logo {
-        width: 90px;
+        width: 180px;
         padding: 5px 10px;
         margin-left: 20px;
         height: 70px;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .menu_head_logo_item{
+        width: 45%;
     }
 
     .menu_head_icon {
@@ -159,8 +173,9 @@
         color: white;
         transition-duration: 1s;
     }
-    .link_item:active{
-        background-color: rgb(72, 161, 235)git ;
+
+    .link_item:active {
+        background-color: rgb(72, 161, 235);
     }
 
     .scrollEffect2 {

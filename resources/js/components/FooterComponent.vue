@@ -46,7 +46,7 @@
                 </div>
             </div>
             <div class="footer_block order-2">
-                <a class="footer_contact_amu" href="https://www.univ-amu.fr/">
+                <a class="footer_contact_amu" href="https://iut.univ-amu.fr/">
                     <div class="amu-icon">
                         <svg>
                             <use xlink:href="#logo-amu"></use>
