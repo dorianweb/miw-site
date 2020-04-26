@@ -293,13 +293,21 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/resources/js/components/AccueilComponent.vue</url>
+<<<<<<< HEAD
           <line>420</line>
+=======
+          <line>417</line>
+>>>>>>> fb33f9f1df9a5ed557ca3a8dea102be0b29d1a5f
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/resources/js/components/AccueilComponent.vue</url>
+<<<<<<< HEAD
           <line>321</line>
+=======
+          <line>317</line>
+>>>>>>> fb33f9f1df9a5ed557ca3a8dea102be0b29d1a5f
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="3" />
         </line-breakpoint>

@@ -491,7 +491,10 @@
 
         .logo_text {
             width: 375px;
+<<<<<<< HEAD
             left: 65px;
+=======
+>>>>>>> fb33f9f1df9a5ed557ca3a8dea102be0b29d1a5f
         }
 
         .text_lp {
@@ -503,6 +506,7 @@
         }
 
         .presentation {
+<<<<<<< HEAD
             font-size: 1.2em;
             width: 44%;
             left: 65px;
@@ -514,6 +518,18 @@
 
         .p2 {
             top: 455px;
+=======
+            font-size: 1.1em;
+            width: 44%;
+        }
+
+        .p1 {
+            top: 325px;
+        }
+
+        .p2 {
+            top: 450px;
+>>>>>>> fb33f9f1df9a5ed557ca3a8dea102be0b29d1a5f
         }
 
         .p4 {
@@ -521,8 +537,13 @@
         }
 
         .item_btn {
+<<<<<<< HEAD
             font-size: 1.4em;
             top: 400px;
+=======
+            font-size: 1.3em;
+            width: 275px;
+>>>>>>> fb33f9f1df9a5ed557ca3a8dea102be0b29d1a5f
         }
 
         .argument {
