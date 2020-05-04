@@ -49,6 +49,7 @@
     p {
         margin-bottom: 10px;
     }
+
     * {
         color: white;
         font-size: 0.9em;
@@ -63,6 +64,7 @@
         padding: 30px 20px;
     }
 
+
     .prerequis {
         background-color: #1DB0BA;
     padding: 10px;
@@ -76,6 +78,7 @@
         margin-left: 10px;
         border-left: white 1px solid;
     }
+
 
     @media screen and (min-width: 768px) {
 
@@ -94,6 +97,9 @@
             border: none;
             padding: 30px 10px 10px 25px;
             box-shadow: -8px -6px 0px 0px rgba(0, 0, 0, 0.25);
+
+
+
         }
 
         .intro_block {
@@ -110,11 +116,17 @@
             left: 3%;
         }
 
+        .b1{
+            top:8%;
+            left: 3%;
+        }
+
         .b2 {
             bottom: 8%;
             right: 3%;
         }
     }
+
 
     @media screen and (min-width: 1024px) {
         .intro {
@@ -132,6 +144,5 @@
             padding: 4.4%;
         }
     }
-
 
 </style>
