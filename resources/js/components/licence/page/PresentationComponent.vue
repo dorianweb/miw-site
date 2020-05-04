@@ -52,8 +52,8 @@
 
     * {
         color: white;
-        font-size: 0.9em;
     }
+
     li {
         list-style-type: none;
     }
@@ -62,17 +62,21 @@
         color: white;
         background-color: #5193F4;
         padding: 30px 20px;
+        font-size: 0.9em;
     }
 
 
     .prerequis {
         background-color: #1DB0BA;
-    padding: 10px;
+        padding: 10px;
+        font-size: 0.9em;
     }
-    .prerequis h3{
+
+    .prerequis h3 {
         font-size: 1.2em;
     }
-    .prerequis ul  {
+
+    .prerequis ul {
         width: 100%;
         padding-left: 10px;
         margin-left: 10px;
@@ -91,15 +95,12 @@
 
         .intro_text {
             margin: 0 auto;
-            font-size: 0.9em;
             width: 100%;
             height: 100%;
             border: none;
             padding: 30px 10px 10px 25px;
             box-shadow: -8px -6px 0px 0px rgba(0, 0, 0, 0.25);
-
-
-
+            font-size: 0.96em;
         }
 
         .intro_block {
@@ -116,11 +117,6 @@
             left: 3%;
         }
 
-        .b1{
-            top:8%;
-            left: 3%;
-        }
-
         .b2 {
             bottom: 8%;
             right: 3%;
@@ -129,6 +125,7 @@
 
 
     @media screen and (min-width: 1024px) {
+
         .intro {
             width: 90%;
             margin: 0 auto;
@@ -136,6 +133,7 @@
 
         .intro_text {
             box-shadow: -11px -13px 0px 0px rgba(0, 0, 0, 0.25);
+            font-size: 1em;
         }
     }
 
