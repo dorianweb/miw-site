@@ -19,10 +19,11 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+
 <div id="app">
   @yield('content')
 </div>
 <script src="{{ asset('js/app.js') }}" defer></script>
-</body>
 @include('sprite')
+</body>
 </html>
