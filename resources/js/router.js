@@ -1,6 +1,7 @@
 import ExampleComponent from "./components/ExampleComponent";
 import AccueilComponent from "./components/AccueilComponent";
-import LicenceComponent from "./components/LicenceComponent";
+import LicenceComponent from "./components/licence/LicenceComponent";
+import PresentationComponent from "./components/licence/page/PresentationComponent";
 
 export default {
     mode: 'history',
@@ -21,6 +22,7 @@ export default {
             name: 'Licence',
             component:LicenceComponent,
         },
+
         {
             path: '/contact',
             name: 'Contact',

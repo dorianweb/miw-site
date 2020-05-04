@@ -131,6 +131,7 @@
     }
     .menu_head_logo_item{
         width: 45%;
+        height: 100%;
     }
 
     .menu_head_icon {

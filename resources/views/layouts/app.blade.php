@@ -19,10 +19,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
+
 <div id="app">
   @yield('content')
 </div>
+<style>
+    *::selection{
+        background-color: #38c172;
+    }
+</style>
 <script src="{{ asset('js/app.js') }}" defer></script>
-</body>
 @include('sprite')
+</body>
 </html>

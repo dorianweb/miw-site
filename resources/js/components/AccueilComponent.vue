@@ -483,7 +483,7 @@
         }
     }
 
-    @media screen and (min-width: 1400px) {
+    @media screen and (min-width: 1300px) {
 
         .logo {
             width: 69%;
