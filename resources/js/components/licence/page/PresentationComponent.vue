@@ -31,7 +31,14 @@
                 <li>être motivé et asssidu</li>
             </ul>
         </div>
-        <div class="target_people"></div>
+        <div class="target_people">
+            <!--<div>
+                <h3></h3>
+            </div>
+            -->
+                <div class style="">
+                </div>
+        </div>
         <div class=" workspace"></div>
         <div class="hours"></div>
         <div class="admission_inscription "></div>
@@ -40,8 +47,18 @@
     </div>
 </template>
 <script>
+    import {mapGetters} from 'vuex';
     export default {
-        name: "PresentationComponent"
+        name: "PresentationComponent",
+        data:()=>{
+            return {
+                img:['setup.jpg','student.jpg','worker.jpg'],
+            }
+        },
+
+        computed:{
+            ...mapGetters(['IMG_URL_GETTER']),
+        }
     }
 </script>
 
@@ -68,19 +85,25 @@
 
     .prerequis {
         background-color: #1DB0BA;
+        width: 320px;
         padding: 10px;
         font-size: 0.9em;
+        margin: 10px auto;
     }
 
     .prerequis h3 {
         font-size: 1.2em;
+        margin: 12px;
+        width: fit-content;
+
     }
 
     .prerequis ul {
-        width: 100%;
-        padding-left: 10px;
-        margin-left: 10px;
+        width: 80%;
+        padding-left: 0;
+        margin-left: 10%;
         border-left: white 1px solid;
+        text-align: center;
     }
 
 
@@ -98,9 +121,9 @@
             width: 100%;
             height: 100%;
             border: none;
-            padding: 30px 10px 10px 25px;
+            padding: 25px 10px 10px 20px;
             box-shadow: -8px -6px 0px 0px rgba(0, 0, 0, 0.25);
-            font-size: 0.96em;
+            font-size: 1em;
         }
 
         .intro_block {
@@ -121,13 +144,34 @@
             bottom: 8%;
             right: 3%;
         }
+
+        .prerequis {
+            width: 450px;
+            margin-left: 36%;
+            margin-top: 20px;
+            font-size: 1em;
+        }
+
+        .prerequis h3 {
+
+        }
+
+        .prerequis ul {
+            padding-left: 30px;
+            margin-left: 45px;
+
+        }
+
+        .prerequis ul li {
+            width: 90%;
+        }
     }
 
 
     @media screen and (min-width: 1024px) {
 
         .intro {
-            width: 90%;
+            width: 100%;
             margin: 0 auto;
         }
 
@@ -135,11 +179,31 @@
             box-shadow: -11px -13px 0px 0px rgba(0, 0, 0, 0.25);
             font-size: 1em;
         }
+
+        .prerequis {
+            margin-left: 53%;
+        }
     }
 
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1440px) {
         .intro {
             padding: 4.4%;
+        }
+
+        .intro_text {
+            font-size: 1.2em;
+        }
+
+        .prerequis {
+            margin-left: 66%;
+        }
+
+        .prerequis h3 {
+            font-size: 1.4em;
+        }
+
+        .prerequis li {
+            font-size: 1.2em;
         }
     }
 

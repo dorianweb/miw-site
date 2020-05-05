@@ -1587,12 +1587,13 @@
 
     export default {
         name: "LicenceComponent",
+        props:[],
         components: {PresentationComponent, CompetenceComponent, MetierComponent, ProgrammeComponent},
         data() {
             return {
                 selectedComponent: 0,
                 tabs: ['Presentation', 'Programme', 'Competences', 'Metiers'],
-                licence_radio: 'Presentation'
+                licence_radio: 'Presentation',
             }
         }
     }

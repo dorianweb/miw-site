@@ -1,7 +1,7 @@
 <template>
     <div>
         <NavbarComponent></NavbarComponent>
-        <router-view :img_url="img" :dates="dates[0]" ></router-view>
+        <router-view :dates="dates[0]"></router-view>
         <FooterComponent :socials="socials"></FooterComponent>
 
     </div>
@@ -11,6 +11,7 @@
 <script>
     import NavbarComponent from "./NavbarComponent";
     import FooterComponent from "./FooterComponent";
+    import {mapActions, mapGetters} from 'vuex';
 
     export default {
         name: "App",
@@ -21,16 +22,21 @@
         mounted() {
             this.getSocial();
             this.getDate();
+            this.IMG_URL_SETTER({img: this.img_url})
+
         },
         props: ['img_url'],
         data() {
             return {
                 socials: '',
-                img: this.img_url,
-                dates:'',
+                dates: '',
             }
         },
+        computed: {
+            ...mapGetters(['IMG_URL_GETTER']),
+        },
         methods: {
+            ...mapActions(['IMG_URL_SETTER']),
             getSocial() {
                 axios.get('api/socials').then(response => {
                     this.socials = response.data.filter(social => social.activ == 1)

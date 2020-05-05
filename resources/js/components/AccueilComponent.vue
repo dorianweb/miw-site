@@ -15,7 +15,7 @@
                 </div>
             </div>
             <div class="accueil_img">
-                <img :src="img+'/accueil.png'" alt="a human with a computer">
+                <img :src="IMG_URL_GETTER+'/Accueil/accueil.png'" alt="a human with a computer">
             </div>
             <div class="presentation">
                 <div>
@@ -66,7 +66,6 @@
                         connaître des <span class="bold">CMS</span>, des frameworks et des bibliothèques. Des
                         compétences en
                         bases de données, <span class="bold">réseau et sécurité</span> seront nécessaire.
-
                     </div>
                 </div>
                 <div class="accueil_img">
@@ -78,7 +77,7 @@
         </div>
         <div class="item relative">
             <div class="item_img">
-                <img :src="img+'/iMac2.png'" alt="">
+                <img :src="IMG_URL_GETTER+'/Accueil/iMac2.png'" alt="">
             </div>
             <div class="argument">
                 <h3> Un secteur qui recrute !</h3>
@@ -101,7 +100,7 @@
         </div>
         <div class="item relative item2">
             <div class="item_img">
-                <img :src="img+'/miw_2019.png'" alt="">
+                <img :src="IMG_URL_GETTER+'/Accueil/miw_2019.png'" alt="">
             </div>
             <div class="argument">
                 <h3>Pourquoi choisir cette formation ?</h3>
@@ -131,20 +130,20 @@
             </div>
         </div>
         <div class="boxes">
-            <div class="box" :style="{backgroundImage:`url(${img}/stuff.png)`}">
+            <div class="box" :style="{backgroundImage:`url(${IMG_URL_GETTER}/Accueil/stuff.png)`}">
                 <h3>Travail de groupe</h3>
             </div>
-            <div class="box" :style="{backgroundImage:`url(${img}/cours-design.png)`}">
+            <div class="box" :style="{backgroundImage:`url(${IMG_URL_GETTER}/Accueil/cours-design.png)`}">
 
                 <h3>Des enseignants issus du monde professionnel</h3>
             </div>
 
-            <div class="box " :style="{backgroundImage:`url(${img}/femme-ordi.png)`}">
+            <div class="box " :style="{backgroundImage:`url(${IMG_URL_GETTER}/Accueil/femme-ordi.png)`}">
 
                 <h3>Les dernière technologie</h3>
             </div>
         </div>
-        <div class="banniere_container" :style="{backgroundImage:`url(${img}/mountain.png)`}">
+        <div class="banniere_container" :style="{backgroundImage:`url(${IMG_URL_GETTER}/Accueil/mountain.png)`}">
 
             <div class="banniere">
                 <div>
@@ -163,26 +162,37 @@
 </template>
 
 <script>
+
+    import {mapGetters} from 'vuex';
+
     export default {
         name: "AccueilComponent",
-        props: ['img_url', 'dates'],
+        props: ['dates'],
+
+        mounted() {
+            window.addEventListener('resize', this.sizeHandler);
+        },
+
+
+        computed: {
+            ...mapGetters(['IMG_URL_GETTER'])
+        },
+
+
+        data() {
+            return {
+                date: this.dates,
+                screen: window.innerWidth,
+            }
+        },
+
+
         methods: {
             sizeHandler() {
                 this.screen = window.innerWidth;
             }
         },
-        mounted() {
-            window.addEventListener('resize', this.sizeHandler);
-        },
-        data() {
-            return {
-                img: this.img_url,
-                date: this.dates,
-                screen: window.innerWidth,
 
-
-            }
-        }
     }
 </script>
 
@@ -202,7 +212,8 @@
     * {
         color: white;
     }
-    *::selection{
+
+    *::selection {
         background-color: #38c172;
     }
 
@@ -381,6 +392,7 @@
             top: 265px;
 
         }
+
         .p2 {
             top: 365px;
         }
@@ -389,7 +401,7 @@
             position: absolute;
             width: 240px;
             top: 80px;
-            left:50px;
+            left: 50px;
             margin: 0;
         }
 
@@ -531,9 +543,10 @@
         }
 
         .item_btn {
-             font-size: 1.4em;
+            font-size: 1.4em;
             top: 400px;
         }
+
         .argument {
             padding: 21px 38px;
             font-size: 1.1em;
