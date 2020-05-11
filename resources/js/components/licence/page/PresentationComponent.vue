@@ -41,9 +41,8 @@
             </div>
         </div>
         <div class=" workspace">
-            <h3 class="title">espace de travail</h3>
-
-            <div class="workspace_text">
+            <h3 class="title">Espace De Travail</h3>
+            <div class="workspace_text w_text_1">
                 <p>
                     La salle informatique, réservée aux étudiants de la licence, est accessible toute la journée grâce à
                     un digicode.
@@ -53,18 +52,42 @@
                 </p>
             </div>
 
-            <img class="workspace_img"  :src="IMG_URL_GETTER+'/Licence/classroom.jpg'" alt="a cool student classroom">
+            <img class="workspace_img w_img_1" :src="IMG_URL_GETTER+'/Licence/classroom.jpg'"
+                 alt="a cool student classroom">
 
-            <div class="workspace_text">
+            <div class="workspace_text w_text_2">
                 <p>Les cours sont donnés par des enseignants et ancien eleves issue
                     d'entreprise informatique et agence web afin de garantir la
                     pertinence des cours et technologie utilisés par les étudiants
                 </p>
             </div>
-            <img v-if=" innerWidth >= 728" src="" alt="fgshg">
+            <img v-if="innerWidth >=768" class="workspace_img w_img_2" :src="IMG_URL_GETTER+'/Licence/classroom.jpg'"
+                 alt="a cool student classroom">
         </div>
-        <div class="hours"></div>
-        <div class="admission_inscription "></div>
+        <div class="hours">
+            <h3 class="title reverse">Volume Horraires</h3>
+            <div v-for="(circle,index) in circle_img" :key="index" :class="'circle-item circle'+index">
+                <div class="circle-background"></div>
+                <img class="circle-img" :src="IMG_URL_GETTER+'/Licence/'+circle"/>
+                <span class="circle_text">{{circle_text[index]}}</span>
+            </div>
+
+        </div>
+        <div class="admission_inscription ">
+            <h3 class="title">Admission et obtention
+                du diplome</h3>
+            <div class="prerequis obtention">
+                <h3>obtention du diplome</h3>
+                <ul>
+                    <li>avoir une moyenne générale > 10</li>
+                    <li>avoir une note aux modules > 8</li>
+                    <li>tout eleves ayant eu une moyenne >10 et une note
+                        a un module inferieur a 8 recevra une attestation
+                        notifiant l'elleves des module a repasser
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </template>
 <script>
@@ -77,6 +100,9 @@
                 box_img: ['setup.jpg', 'worker.jpg', 'student.jpg'],
                 box_text: ['Salarié en pleine reconversion professionnel', 'salarié en formation ', 'étudiant'],
                 innerWidth,
+                circle_img: ['reunion.jpg', 'groupe.jpg', 'presentation.jpg'],
+                circle_text: ['550h  de cours', 'Projet scolaire de 90h', 'Stage d\'une durée \n' +
+                'de 3 a 6 mois']
             }
         },
 
@@ -137,12 +163,10 @@
         text-align: center;
         position: relative;
         width: 70%;
-        margin-top: 20px;
-        margin-bottom: 0;
+        margin: 15px 0;
     }
 
     .title::after {
-
         content: ""; /* This is necessary for the pseudo element to work. */
         display: block; /* This will put the pseudo element on its own line. */
         margin: 0; /* This will center the border. */
@@ -185,24 +209,99 @@
     .box1 {
         background-position: bottom right;
     }
+
     /*ecran 4*/
-    .workspace{
+    .workspace {
         display: flex;
         flex-direction: column;
     }
-    .workspace_text{
-        background-color: #5D99F2;
+
+    .workspace_text {
+        background-color: rgb(93, 153, 242, 0.83);
         font-size: 0.9em;
         padding: 10px 10px 0 10px;
-        margin-top: 5px;
+        margin-top: 0;
     }
-    .workspace_img{
+
+    .workspace_img {
         width: 100%;
+    }
+
+    .hours {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        background-color: #EEEEEE;
+    }
+
+    .circle-item {
+        position: relative;
+        width: 250px;
+        height: 250px;
+    }
+
+    .circle-background {
+        width: 100%;
+        height: 100%;
+        background-color: #6cb2eb;
+        border-radius: 100%;
+    }
+
+    .circle-img {
+        width: 94%;
+        height: 94%;
+        position: absolute;
+        background-color: white;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto auto;
+        right: 0;
+        border-radius: 100%;
+    }
+
+    .circle_text {
+        width: 94%;
+        height: 44%;
+        position: absolute;
+        background-color: rgb(0, 0, 0, 0.4);
+        top: 49%;
+        bottom: 0;
+        left: 0;
+        margin: auto auto;
+        right: 0;
+        text-align: center;
+        border-radius: 0 0 50% 50% / 0 0 94% 94%;
+        padding: 12%;
+    }
+
+    .reverse {
+        color: #1DB0BA;
+        background-color: inherit;
+        align-self: flex-end;
+        position: relative;
+        right: 0;
+    }
+
+    .reverse:after {
+        border-color: #1DB0BA;
+        left: 54%;
+    }
+
+    .obtention{
+        height: 280px;
+    }
+    .obtention>ul {
+        height: 80%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
     }
 
 
     @media screen and (min-width: 768px) {
-
         .intro {
             width: 100%;
             position: relative;
@@ -247,7 +346,6 @@
             font-size: 1em;
         }
 
-
         .prerequis ul {
             padding-left: 30px;
             margin-left: 45px;
@@ -267,7 +365,6 @@
 
         .title {
             width: 33%;
-            margin: 0;
         }
 
         .public {
@@ -288,12 +385,91 @@
             height: 200px;
         }
 
+        /*ecran 4*/
+        .workspace {
+            width: 95%;
+            margin: 0 auto;
+        }
+
+        .workspace_img {
+            width: 80%;
+            position: relative;
+            top: -60px;
+            z-index: -1;
+        }
+
+        .workspace_text {
+            width: 65%;
+            padding: 15px;
+        }
+
+        .w_text_1 {
+            align-self: flex-start;
+
+        }
+
+        .w_img_1 {
+            align-self: flex-end;
+        }
+
+        .w_text_2 {
+            align-self: flex-end;
+        }
+
+        .w_img_2 {
+            align-self: flex-start;
+        }
+
+        .hours {
+            padding: 0 17%;
+            position: relative;
+        }
+
+        .reverse {
+            position: absolute;
+        }
+
+        .circle-item {
+            width: 33vw;
+            height: 33vw;
+        }
+
+        .circle0 {
+            align-self: flex-start;
+            top: 20px;
+        }
+
+        .circle2 {
+            align-self: flex-end;
+            top: -20px;
+        }
+
+        .circle1:before, .circle1:after {
+            content: '';
+            position: absolute;
+            background-color: #6cb2eb;
+            width: 3vw;
+            height: 3vw;
+            border-radius: 100%;
+        }
+
+        .circle1:before {
+            right: 32%;
+            top: -20%;
+        }
+
+        .circle1:after {
+            left: 32%;
+            bottom: -20%;
+        }
+        .obtention{
+            margin: 0 auto;
+        }
 
     }
 
 
     @media screen and (min-width: 1024px) {
-
         .intro {
             width: 100%;
             margin: 0 auto;
@@ -309,10 +485,14 @@
             margin-left: 53%;
         }
 
+        .prerequis > h3 {
+            font-size: 1.4em;
+        }
+
         /*ecran 3*/
         .title {
             width: 30%;
-            font-size: 1.2em;
+            font-size: 1.4em;
         }
 
         .boxes {
@@ -329,6 +509,39 @@
         .public {
             padding: 2% 0 25% 0;
         }
+
+        .workspace_text {
+            font-size: 1.2em;
+        }
+
+        .hours {
+            padding: 1% 23%;
+        }
+
+        .circle-item {
+            width: 20vw;
+            height: 20vw;
+        }
+
+        .circle1:before, .circle1:after {
+            width: 4vw;
+            height: 4vw;
+        }
+
+        .circle1:before {
+            top: -28%;
+            right: 52%;
+
+        }
+
+        .circle1:after {
+            bottom: -28%;
+            left: 52%;
+        }
+        .obtention{
+            margin: 0 auto;
+        }
+
     }
 
     @media screen and (min-width: 1440px) {
@@ -345,10 +558,6 @@
             margin-left: 66%;
         }
 
-        .prerequis h3 {
-            font-size: 1.4em;
-        }
-
         .prerequis li {
             font-size: 1.2em;
         }
@@ -361,6 +570,18 @@
 
         .boxes {
             height: 63%;
+        }
+
+        /*ecran4*/
+        .reverse {
+            font-size: 2em;
+        }
+
+        .circle_text {
+            font-size: 1.5em;
+        }
+        .obtention{
+            margin: 0 auto;
         }
     }
 
