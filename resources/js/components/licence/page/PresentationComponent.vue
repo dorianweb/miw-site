@@ -87,6 +87,14 @@
                     </li>
                 </ul>
             </div>
+            <div class="inscription">
+                <h3 class="title reverse inscription_title">Procédure d'inscription</h3>
+                <div class="inscription_container_svg">
+                <img class="inscription_svg" :src="IMG_URL_GETTER+'/svg/interview.svg'" alt="">
+                </div>
+                    <router-link class="inscription_btn" to="">Avec e-candidat</router-link>
+                    <router-link class="inscription_btn" to="">Sans e-candidat</router-link>
+            </div>
         </div>
     </div>
 </template>
@@ -289,10 +297,11 @@
         left: 54%;
     }
 
-    .obtention{
+    .obtention {
         height: 280px;
     }
-    .obtention>ul {
+
+    .obtention > ul {
         height: 80%;
         display: flex;
         flex-direction: column;
@@ -300,7 +309,34 @@
         align-items: center;
     }
 
+    .inscription{
+        background-color: #EEEEEE;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        margin-top: 2%;
+    }
+    .inscription_container_svg{
+        overflow: hidden;
+        width: 100%;
+        height: 380px;
+    }
+.inscription_svg{
+    width: 181%;
+    margin-left: -38%;
+    margin-top: -26%;
+    height: 145%;
+}
 
+.inscription_btn{
+    background-color: #52D2BC;
+    padding: 10px;
+    border-radius: 30px;
+    text-align: center;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
     @media screen and (min-width: 768px) {
         .intro {
             width: 100%;
@@ -462,8 +498,30 @@
             left: 32%;
             bottom: -20%;
         }
-        .obtention{
+
+        .obtention {
             margin: 0 auto;
+            width: 50%;
+        }
+        .inscription{
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+        .inscription_container_svg{
+            height: 600px;
+        }
+        .inscription_svg{
+            margin-top: -17%;
+        }
+        .inscription_btn{
+            width: 40%;
+            margin-top: 25px;
+        }
+        .inscription_title{
+            top: 0;
+            position: relative;
+            width: 50% !important;
         }
 
     }
@@ -538,10 +596,21 @@
             bottom: -28%;
             left: 52%;
         }
-        .obtention{
+
+        .obtention {
+            width: 50%;
             margin: 0 auto;
+            height: 320px;
+            padding:30px;
         }
 
+        .obtention > ul {
+            margin: 0 auto;
+            text-align: left;
+        }
+        .inscription{
+            padding: 1% 15%;
+        }
     }
 
     @media screen and (min-width: 1440px) {
@@ -580,9 +649,19 @@
         .circle_text {
             font-size: 1.5em;
         }
-        .obtention{
+
+        .obtention {
+            width: 43%;
             margin: 0 auto;
+            height: 365px;
+            padding: 35px;
         }
+
+        .obtention > ul {
+            margin: 0 auto;
+            text-align: left;
+        }
+
     }
 
 </style>
