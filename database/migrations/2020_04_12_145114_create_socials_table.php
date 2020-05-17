@@ -14,6 +14,7 @@ class CreateSocialsTable extends Migration
     public function up()
     {
         Schema::create('socials', function (Blueprint $table) {
+            $table->engine='InnoDB';
             $table->id();
             $table->string('link');
             $table->string('svg_name');

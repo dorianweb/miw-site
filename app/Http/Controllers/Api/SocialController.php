@@ -3,7 +3,9 @@
 namespace App\Http\Controllers\Api;
 
 use App\Http\Controllers\Controller;
+use App\Page;
 use App\Social;
+use App\Subpage;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -16,7 +18,8 @@ class SocialController extends Controller
      */
     public function index()
     {
-        return Social::all();
+       // return Social::all();
+        return  Page::with('subpages')->get();
     }
 
     /**

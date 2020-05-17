@@ -14,7 +14,7 @@ class CreateTextsTable extends Migration
     public function up()
     {
         Schema::create('texts', function (Blueprint $table) {
-            $table->engine = 'InnoDB';
+            $table->engine='InnoDB';
             $table->id();
             $table->text('htmlContent');
             $table->integer('index');

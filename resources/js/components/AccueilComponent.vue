@@ -75,6 +75,8 @@
                 </div>
             </div>
         </div>
+
+
         <div class="item relative">
             <div class="item_img">
                 <img :src="IMG_URL_GETTER+'/Accueil/iMac2.png'" alt="">

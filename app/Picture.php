@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Picture extends Model
 {
-     function page(){
-         return $this->belongsTo(Page::class);
+     function block(){
+         return $this->belongsTo(Block::class);
      }
 }
