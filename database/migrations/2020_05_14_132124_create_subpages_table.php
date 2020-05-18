@@ -17,6 +17,8 @@ class CreateSubpagesTable extends Migration
             $table->engine='InnoDB';
             $table->id();
             $table->string('name');
+            $table->unsignedBigInteger('page_id');
+            $table->foreign('page_id')->references('id')->on('pages');
             $table->timestamps();
         });
     }

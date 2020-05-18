@@ -18,8 +18,7 @@ class SocialController extends Controller
      */
     public function index()
     {
-       // return Social::all();
-        return  Page::with('subpages')->get();
+       return Social::all();
     }
 
     /**

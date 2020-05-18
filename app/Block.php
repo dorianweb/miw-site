@@ -8,11 +8,16 @@ class Block extends Model
 {
     function texts()
     {
-        return $this->hasMany(Text::class);
+        return $this->belongsToMany(Text::class);
     }
 
     function pictures()
     {
-        return $this->hasMany(Picture::class);
+        return $this->belongsToMany(Picture::class);
+    }
+
+    function subpages()
+    {
+        return $this->belongsToMany(Subpage::class);
     }
 }

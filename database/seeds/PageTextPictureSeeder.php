@@ -27,11 +27,9 @@ class PageTextPictureSeeder extends Seeder
             foreach ($subpages[$page] as $subpage) {
                 $dbsubpage = DB::table('subpages')->insertGetId([
                     'name' => $subpage,
+                    'page_id'=> $dbpage
                 ]);
-                DB::table('page_subpage')->insertGetId([
-                    'page_id' => $dbpage,
-                    'subpage_id' => $dbsubpage,
-                ]);
+
             }
         }
 

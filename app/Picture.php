@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Picture extends Model
 {
      function block(){
-         return $this->belongsTo(Block::class);
+         return $this->belongsToMany(Block::class);
      }
 }

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Text extends Model
 {
     function block(){
-        return $this->belongsTo(Block::class);
+        return $this->belongsToMany(Block::class);
     }
 }
