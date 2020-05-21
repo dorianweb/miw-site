@@ -7,36 +7,22 @@
                         <use xlink:href="#logo"></use>
                     </svg>
                 </div>
-                <div class="text_lp">
-                    Licence Professionnelle
-                </div>
-                <div class="text_description">
-                    Mobilité, Internet, Web
-                </div>
+                <div v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][0]['texts'][0]['htmlContent']"
+                     class="text_lp"></div>
+                <div v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][0]['texts'][1]['htmlContent']"
+                     class="text_description"></div>
             </div>
             <div class="accueil_img">
                 <img :src="IMG_URL_GETTER+'/Accueil/accueil.png'" alt="a human with a computer">
             </div>
             <div class="presentation">
-                <div>
-                    Cette licenceb <span class="bold">professionnelle</span>
-                    forme des diplômés dans les secteurs
-                    très demandeurs et porteurs du <span class="bold"> DÉVELOPPEMENT WEB,
-                D'APPLICATION MOBILES et D'OBJETS CONNECTES.</span>
-                </div>
+                <div v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][0]['texts'][2]['htmlContent']"></div>
             </div>
             <div class="presentation">
-                <div>
-                    Les <span class="bold">DEVELOPPEURS WEB</span> devront maîtriser de nombreux langages de
-                    programmation comme le <span class="bold">PHP,le JavaScript, le HTML5, le CSS3</span> mais aussi
-                    connaître des <span class="bold">CMS</span>, des frameworks et des bibliothèques. Des compétences en
-                    bases de données, <span class="bold">réseau et sécurité</span> seront nécessaire.
-
-                </div>
+                <div v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][0]['texts'][3]['htmlContent']"></div>
             </div>
         </div>
         <div v-else class="accueil">
-
             <div class="relative_container">
                 <div class="logo_text">
                     <div class="logo">
@@ -44,29 +30,16 @@
                             <use xlink:href="#logo"></use>
                         </svg>
                     </div>
-                    <div class="text_lp">
-                        Licence Professionnelle
-                    </div>
-                    <div class="text_description">
-                        Mobilité, Internet, Web
-                    </div>
+                    <div v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][0]['texts'][0]['htmlContent']"
+                         class="text_lp"></div>
+                    <div v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][0]['texts'][1]['htmlContent']"
+                         class="text_description"></div>
                 </div>
                 <div class="presentation p1">
-                    <div>
-                        Cette licenceb <span class="bold">professionnelle</span>
-                        forme des diplômés dans les secteurs
-                        très demandeurs et porteurs du <span class="bold"> DÉVELOPPEMENT WEB,
-                D'APPLICATION MOBILES et D'OBJETS CONNECTES.</span>
-                    </div>
+                    <div v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][0]['texts'][2]['htmlContent']"></div>
                 </div>
                 <div class="presentation p2">
-                    <div>
-                        Les <span class="bold">DEVELOPPEURS WEB</span> devront maîtriser de nombreux langages de
-                        programmation comme le <span class="bold">PHP,le JavaScript, le HTML5, le CSS3</span> mais aussi
-                        connaître des <span class="bold">CMS</span>, des frameworks et des bibliothèques. Des
-                        compétences en
-                        bases de données, <span class="bold">réseau et sécurité</span> seront nécessaire.
-                    </div>
+                    <div v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][0]['texts'][3]['htmlContent']"></div>
                 </div>
                 <div class="accueil_img">
                     <svg>
@@ -75,81 +48,73 @@
                 </div>
             </div>
         </div>
-
-
         <div class="item relative">
             <div class="item_img">
-                <img :src="IMG_URL_GETTER+'/Accueil/iMac2.png'" alt="">
+                <img
+                    :src="IMG_URL_GETTER+'/'+PAGES_GETTER[0]['subpages'][0]['blocks'][1]['pictures'][0]['public_folder']+'/'+PAGES_GETTER[0]['subpages'][0]['blocks'][1]['pictures'][0]['filename']"
+                    alt="">
             </div>
             <div class="argument">
-                <h3> Un secteur qui recrute !</h3>
-                <p class="paragraphe">Beaucoup d'entreprises font appel aujourd'hui aux technologies nouvelles comme
-                    moyens d'interactions
-                    internes ou externes : commerce électronique, télétravail, vidéoconférence, télécommunication
-                    d'informations et de documents électroniques, gestion de projets multi-localisés etc...</p>
-                <p class="paragraphe" v-show="screen>=1024">Désormais, dans les entreprises, les hommes et les machines
-                    coopèrent en permanence au travers de
-                    nouveaux outils tels Internet, Intranet, Réseaux d'entreprise, Système d'informations Distribuées et
-                    Multimédia. Ces outils nécessitent une évolution des modes de pensée et des métiers. Ces nouveaux
-                    métiers imposent une grande ouverture d'esprit, une polyvalence, des connaissances techniques et
-                    humaines.</p>
+                <h3 v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][1]['texts'][0]['htmlContent']"></h3>
+                <p v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][1]['texts'][1]['htmlContent']"
+                   class="paragraphe"></p>
+                <p v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][1]['texts'][2]['htmlContent']" class="paragraphe"
+                   v-show="screen>=1024"></p>
             </div>
-            <a href="">
-                <button class="item_btn">
-                    Les Débouché
-                </button>
-            </a>
+            <router-link to="#">
+                <button v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][1]['texts'][3]['htmlContent']"
+                        class="item_btn"></button>
+            </router-link>
         </div>
         <div class="item relative item2">
             <div class="item_img">
-                <img :src="IMG_URL_GETTER+'/Accueil/miw_2019.png'" alt="">
+                <img
+                    :src="`${IMG_URL_GETTER}/${PAGES_GETTER[0]['subpages'][0]['blocks'][2]['pictures'][0]['public_folder']}/${PAGES_GETTER[0]['subpages'][0]['blocks'][2]['pictures'][0]['filename']}`"
+                    alt="">
             </div>
             <div class="argument">
-                <h3>Pourquoi choisir cette formation ?</h3>
-                <p class="paragraphe p4">
-                    Cette Licence professionnelle forme des diplômés dans les secteurs très demandeurs et porteurs du
-                    développement
-                    web, d'applications mobiles et d'objets connectés.
-                </p>
+                <h3 v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][2]['texts'][0]['htmlContent']"></h3>
+                <p v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][2]['texts'][1]['htmlContent']"
+                   class="paragraphe p4"></p>
 
             </div>
             <div class="item_group_btn">
                 <a href="">
-                    <button class="item_btn">
-                        Les Compétences
-                    </button>
+                    <button v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][2]['texts'][2]['htmlContent']"
+                            class="item_btn"></button>
                 </a>
                 <a href="">
-                    <button class="item_btn">
-                        Découvrez le programme
-                    </button>
+                    <button v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][2]['texts'][3]['htmlContent']"
+                            class="item_btn"></button>
                 </a>
                 <a href="#">
-                    <button class="item_btn">
-                        Devenir Étudiant
-                    </button>
+                    <button v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][2]['texts'][4]['htmlContent']"
+                            class="item_btn"></button>
                 </a>
             </div>
         </div>
         <div class="boxes">
-            <div class="box" :style="{backgroundImage:`url(${IMG_URL_GETTER}/Accueil/stuff.png)`}">
-                <h3>Travail de groupe</h3>
+            <div class="box"
+                 :style="{backgroundImage:`url(${IMG_URL_GETTER}/${PAGES_GETTER[0]['subpages'][0]['blocks'][3]['pictures'][0]['public_folder']}/${PAGES_GETTER[0]['subpages'][0]['blocks'][3]['pictures'][0]['filename']})`}">
+                <h3 v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][3]['texts'][0]['htmlContent']"></h3>
             </div>
-            <div class="box" :style="{backgroundImage:`url(${IMG_URL_GETTER}/Accueil/cours-design.png)`}">
+            <div class="box"
+                 :style="{backgroundImage:`url(${IMG_URL_GETTER}/${PAGES_GETTER[0]['subpages'][0]['blocks'][3]['pictures'][1]['public_folder']}/${PAGES_GETTER[0]['subpages'][0]['blocks'][3]['pictures'][1]['filename']})`}">
 
-                <h3>Des enseignants issus du monde professionnel</h3>
+                <h3 v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][3]['texts'][1]['htmlContent']"></h3>
             </div>
-
-            <div class="box " :style="{backgroundImage:`url(${IMG_URL_GETTER}/Accueil/femme-ordi.png)`}">
-
-                <h3>Les dernière technologie</h3>
+            <div class="box "
+                 :style="{backgroundImage:`url(${IMG_URL_GETTER}/${PAGES_GETTER[0]['subpages'][0]['blocks'][3]['pictures'][2]['public_folder']}/${PAGES_GETTER[0]['subpages'][0]['blocks'][3]['pictures'][2]['filename']})`}">
+                <h3 v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][3]['texts'][2]['htmlContent']"></h3>
             </div>
         </div>
-        <div class="banniere_container" :style="{backgroundImage:`url(${IMG_URL_GETTER}/Accueil/mountain.png)`}">
+
+
+        <div class="banniere_container"
+             :style="{backgroundImage:`url(${IMG_URL_GETTER}/${PAGES_GETTER[0]['subpages'][0]['blocks'][3]['pictures'][2]['public_folder']}/${PAGES_GETTER[0]['subpages'][0]['blocks'][4]['pictures'][0]['filename']})`}">
 
             <div class="banniere">
-                <div>
-                    prochaine date :
+                <div v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][4]['texts'][0]['htmlContent']">
                 </div>
                 <h3>
                     {{new Date(dates.date).toLocaleDateString('fr-FR', {day: 'numeric', month: 'numeric', year:
@@ -177,7 +142,7 @@
 
 
         computed: {
-            ...mapGetters(['IMG_URL_GETTER'])
+            ...mapGetters(['IMG_URL_GETTER', 'PAGES_GETTER'])
         },
 
 
@@ -391,20 +356,23 @@
         }
 
         .p1 {
-            top: 265px;
-
+            top: 240px;
         }
 
         .p2 {
-            top: 365px;
+            top: 345px;
         }
 
         .logo_text {
             position: absolute;
-            width: 240px;
-            top: 80px;
+            width: 350px;
+            top: 40px;
             left: 50px;
             margin: 0;
+        }
+
+        .logo {
+            margin-left: -95px;
         }
 
         /*ecran2*/
@@ -504,40 +472,31 @@
         }
 
         .logo_text {
-            width: 375px;
+            width: 680px;
             left: 65px;
+            top: 40px;
         }
 
         .text_lp {
+            font-size: 1.3em;
+        }
+        .text_description {
             font-size: 1.8em;
         }
 
-        .text_description {
-            font-size: 2.2em;
-        }
-
         .presentation {
-            font-size: 1.2em;
-            width: 44%;
+            font-size: 1.1em;
+            width: 45%;
             left: 65px;
         }
 
+
         .p1 {
-            top: 335px;
+            top: 250px;
         }
 
         .p2 {
-            top: 455px;
-            font-size: 1.1em;
-            width: 44%;
-        }
-
-        .p1 {
-            top: 325px;
-        }
-
-        .p2 {
-            top: 450px;
+            top: 405px;
         }
 
         .p4 {

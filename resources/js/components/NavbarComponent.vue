@@ -4,12 +4,12 @@
     <nav class="menu">
         <div :class=" isScrolling?'menu_head scrollEffect':'menu_head' ">
             <div class="menu_head_logo">
-            <router-link to="/" class="menu_head_logo_item">
-                <svg>
-                    <use xlink:href="#logo"></use>
-                </svg>
-            </router-link>
-                <a  href="https://iut.univ-amu.fr/" class="menu_head_logo_item">
+                <router-link to="/" class="menu_head_logo_item">
+                    <svg>
+                        <use xlink:href="#logo"></use>
+                    </svg>
+                </router-link>
+                <a href="https://iut.univ-amu.fr/" class="menu_head_logo_item">
                     <svg>
                         <use xlink:href="#logo-amu"></use>
                     </svg>
@@ -18,9 +18,9 @@
 
             <div v-if="screen>=1024" class="menu_body">
                 <ul class="menu_content">
-                    <li v-for="route in  routes" :key="route.path" class="link">
-                        <router-link :to="route.path" :class=" isScrolling?'link_item scrollEffect2':'link_item' ">
-                            {{route.name}}
+                    <li v-for="page in  PAGES_GETTER" :key="page.name" class="link">
+                        <router-link :to="`/`+page.name.toLowerCase()" :class=" isScrolling?'link_item scrollEffect2':'link_item' ">
+                            {{page.name}}
                         </router-link>
                     </li>
                 </ul>
@@ -37,10 +37,10 @@
         </div>
         <div v-if="screen<1024&&isMobileMenuOpen" class="menu_body">
             <ul class="menu_content">
-                <li v-for="route in  routes" :key="route.path" class="link">
-                    <router-link v-on:click.native="toggleMobileMenu" :to="route.path"
+                <li v-for="page in  PAGES_GETTER" :key="page.name"  class="link">
+                    <router-link v-on:click.native="toggleMobileMenu" :to="`/`+page.name.toLowerCase()"
                                  :class=" isScrolling?'link_item scrollEffect':'link_item' ">
-                        {{route.name}}
+                        {{page.name}}
                     </router-link>
                 </li>
             </ul>
@@ -51,14 +51,20 @@
 
 <script>
     import router from "../router";
+    import {mapActions, mapGetters} from 'vuex';
 
     export default {
         name: 'Navbar',
+        created() {
+            this.PAGES_SETTER();
+        },
         mounted() {
             window.addEventListener('scroll', this.scrollcss);
             window.addEventListener('resize', this.sizeHandler);
         },
         methods: {
+
+                ...mapActions(['PAGES_SETTER']),
             toggleMobileMenu() {
                 this.isMobileMenuOpen = !this.isMobileMenuOpen;
             },
@@ -73,13 +79,15 @@
         },
         data: function () {
             return {
-                routes: router.routes.filter(route => route.name != 'Home'),
                 isMobileMenuOpen: false,
                 isScrolling: false,
                 scrollPosition: '',
                 screen: window.innerWidth,
             }
         },
+        computed: {
+            ...mapGetters(['PAGES_GETTER']),
+        }
     }
 </script>
 
@@ -129,7 +137,8 @@
         align-items: center;
         justify-content: space-between;
     }
-    .menu_head_logo_item{
+
+    .menu_head_logo_item {
         width: 45%;
         height: 100%;
     }

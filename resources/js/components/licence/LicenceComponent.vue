@@ -1,13 +1,15 @@
 <template>
     <div>
         <div class="subnav">
+
             <h2 class="page_title">La Licence</h2>
             <ul class="subnav_radio">
                 <li v-for="(value,index) in tabs" :key="index" class="">
-                    <label :class="`subnav_radio_label ${value==licence_radio?'licence_radio_selected' :''}`"
-                           :for="value">{{value}} </label>
-                    <input type="radio" class="subnav_radio_input" v-model="licence_radio" :value="value"
-                           :id="value"></input>
+                    <router-link @click="" :to="`/presentation/${value.toLowerCase()}`"
+                                 :key="value"
+                                 :class="`subnav_radio_label ${value.toLowerCase()== $route.fullPath.split('/')[1]?'licence_radio_selected' :''}`">
+                        {{value}}
+                    </router-link>
                 </li>
             </ul>
             <div class="licence_svg">
@@ -1572,30 +1574,22 @@
                 </svg>
             </div>
         </div>
-        <PresentationComponent v-if="licence_radio=='Presentation'"/>
-        <CompetenceComponent v-else-if="licence_radio=='Competences'"/>
-        <MetierComponent v-else-if="licence_radio=='Metiers'"/>
-        <ProgrammeComponent v-else-if="licence_radio=='Programme'"/>
+        <router-view></router-view>
+
     </div>
 </template>
 
 <script>
-    import PresentationComponent from "./page/PresentationComponent";
-    import CompetenceComponent from "./page/CompetenceComponent";
-    import MetierComponent from "./page/MetierComponent";
-    import ProgrammeComponent from "./page/ProgrammeComponent";
 
     export default {
         name: "LicenceComponent",
-        props:[],
-        components: {PresentationComponent, CompetenceComponent, MetierComponent, ProgrammeComponent},
+        props: [],
         data() {
             return {
-                selectedComponent: 0,
                 tabs: ['Presentation', 'Programme', 'Competences', 'Metiers'],
-                licence_radio: 'Presentation',
             }
-        }
+        },
+
     }
 </script>
 

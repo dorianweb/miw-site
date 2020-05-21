@@ -1,7 +1,7 @@
 <template>
     <div>
         <NavbarComponent></NavbarComponent>
-        <router-view :dates="dates[0]"></router-view>
+        <router-view  :dates="dates[0]"></router-view>
         <FooterComponent :socials="socials"></FooterComponent>
 
     </div>
