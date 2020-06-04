@@ -1,5 +1,5 @@
 <template>
-    <footer class="footer">
+    <footer v-if="!$route.fullPath.includes('backend')" class="footer">
         <div class="footer_contact_logo_social">
             <div class="bande_verte"></div>
             <div class="contact_addresse">

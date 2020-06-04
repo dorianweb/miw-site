@@ -27,7 +27,7 @@ class PageTextPictureSeeder extends Seeder
             foreach ($subpages[$page] as $subpage) {
                 $dbsubpage = DB::table('subpages')->insertGetId([
                     'name' => $subpage,
-                    'page_id'=> $dbpage
+                    'page_id' => $dbpage
                 ]);
 
             }
@@ -81,7 +81,8 @@ class PageTextPictureSeeder extends Seeder
                     ['filename' => 'cours-design.png', 'public_folder' => 'Accueil', 'index' => 1],
                     ['filename' => 'femme-ordi.png', 'public_folder' => 'Accueil', 'index' => 1],
                 ],
-            ], 'screen5' => [
+            ],
+            'screen5' => [
                 'texts' => [
                     ['text' => 'prochaine date :', 'index' => 1],
                 ],
@@ -92,13 +93,13 @@ class PageTextPictureSeeder extends Seeder
         ];
 
         foreach ($content_pages as $key => $content_page) {
-            $accueil =\App\Subpage::all()->where('name','accueil')[0];
+            $accueil = \App\Subpage::all()->where('name', 'accueil')[0];
             $block = DB::table('blocks')->insertGetId([
                 'name' => $key
             ]);
             DB::table('block_subpage')->insertGetId([
                 'block_id' => $block,
-                'subpage_id'=> $accueil->id
+                'subpage_id' => $accueil->id
             ]);
 
 
@@ -111,10 +112,116 @@ class PageTextPictureSeeder extends Seeder
                     'text_id' => $text_id,
                     'block_id' => $block,
                 ]);
-            } foreach ($content_page['pictures'] as $textObject) {
+            }
+            foreach ($content_page['pictures'] as $textObject) {
                 $text_id = DB::table('pictures')->insertGetId([
                     'filename' => $textObject['filename'],
-                    'public_folder'=>$textObject['public_folder'],
+                    'public_folder' => $textObject['public_folder'],
+                    'index' => $textObject['index'],
+                ]);
+                DB::table('block_picture')->insertGetId([
+                    'picture_id' => $text_id,
+                    'block_id' => $block,
+                ]);
+            }
+        }
+
+        $presentations = [
+            'intro' => [
+                'texts' => [
+                    ['text' => ' Depuis un peu plus de 40 ans Internet c’est imiscisser petit a petit dans nos vie et Grandit.Internet a grandi au point de devenir la Source de divers Métier développeur,intégrateur, gestionnaire de base de données administrateur systeme et reseau.', 'index' => 1],
+                    ['text' => '  C\'est pourquoi depuis 20 ans L’iut de Gap pôle gea vous propose d’apprendre le métier de développeur web en 6 mois à travers la Licence Pro Mobilité Internet Webmaster .', 'index' => 2],
+                    ['text' => '   Parfaite pour étudié et maîtrisé La création de projet et application dans le domaine du web cette licence vous propose d\'étudier les bases de la création de site ainsi que les différentes technologie utilisé dans les entreprises du secteur.', 'index' => 3],
+                ],
+                'pictures' => [],
+            ],
+            'prerequis' => [
+                'texts' => [
+                    ['text' => 'Prérequis', 'index' => 1],
+                    ['text' => 'être titulaire d\'un bac +2 informatique', 'index' => 2],
+                    ['text' => 'ou', 'index' => 3],
+                    ['text' => 'avoir des connaissance en informatique', 'index' => 4], ['text' => '', 'index' => 4],
+                    ['text' => 'être motivé et asssidu', 'index' => 4], ['text' => '', 'index' => 5],
+                ],
+                'pictures' => [],
+            ],
+            'target_people' => [
+                'texts' => [
+                    ['text' => 'Salarié en pleine reconversion professionnel', 'index' => 1],
+                    ['text' => 'salarié en formation ', 'index' => 2],
+                    ['text' => 'étudiant', 'index' => 3],
+                ],
+                'pictures' => [
+                    ['filename' => 'setup.jpg', 'public_folder' => 'Licence', 'index' => 1],
+                    ['filename' => 'worker.jpg', 'public_folder' => 'Licence', 'index' => 2],
+                    ['filename' => 'student.jpg', 'public_folder' => 'Licence', 'index' => 3],
+                ],
+            ],
+            'workspace' => [
+                'texts' => [
+                    ['text' => 'Espace De Travail', 'index' => 1],
+                    ['text' => 'La salle informatique, réservée aux étudiants de la licence, est accessible toute la journée grâce à un digicode.', 'index' => 2],
+                    ['text' => 'Chaque étudiant dispose d\'un espace de travail personnel pendant toute la formation (bureau, ordinateur récent, logiciels de développement et pour le multimédia).', 'index' => 3],
+                    ['text' => 'Les cours sont donnés par des enseignants et ancien eleves issue d\'entreprise informatique et agence web afin de garantir la pertinence des cours et technologie utilisés par les étudiants', 'index' => 4],
+                ],
+                'pictures' => [
+                    ['filename' => 'classroom.jpg', 'public_folder' => 'Licence', 'index' => 1],
+                    ['filename' => 'classroom.jpg', 'public_folder' => 'Licence', 'index' => 2],
+                ],
+            ],
+            'hours' => [
+                'texts' => [
+                    ['text' => 'Volume Horraires', 'index' => 1],
+                    ['text' => '550h  de cours', 'index' => 2],
+                    ['text' => 'Projet scolaire de 90h', 'index' => 3],
+                    ['text' => 'Stage d\'une durée  de 3 a 6 mois', 'index' => 4],
+                ],
+                'pictures' => [
+                    ['filename' => 'reunion.jpg', 'public_folder' => 'Licence', 'index' => 1],
+                    ['filename' => 'groupe.jpg', 'public_folder' => 'Licence', 'index' => 2],
+                    ['filename' => 'presentation.jpg', 'public_folder' => 'Licence', 'index' => 3],
+                ],
+            ],
+            'admission_inscription' => [
+                'texts' => [
+                    ['text' => 'Admission et obtention du diplome', 'index' => 1],
+                    ['text' => 'obtention du diplome', 'index' => 2],
+                    ['text' => 'avoir une moyenne générale > 10', 'index' => 3],
+                    ['text' => 'avoir une note aux modules > 8', 'index' => 4],
+                    ['text' => 'tout eleves ayant eu une moyenne > 10 et une note à un module  < 8 recevra une attestation notifiant l\'elleves des module a repasser', 'index' => 5],
+                    ['text' => 'Procédure d\'inscription', 'index' => 6],
+                    ['text' => 'Avec e-candidat', 'index' => 7],
+                    ['text' => 'Sans e-candidat', 'index' => 8],
+                ],
+                'pictures' => [
+                ],
+            ],
+        ];
+        foreach ( $presentations as $key => $presentation) {
+            $accueil = \App\Subpage::all()->where('name', 'presentation')[1];
+            $block = DB::table('blocks')->insertGetId([
+                'name' => $key
+            ]);
+            DB::table('block_subpage')->insertGetId([
+                'block_id' => $block,
+                'subpage_id' => $accueil->id
+            ]);
+
+
+            foreach ($presentation['texts'] as $textObject) {
+                $text_id = DB::table('texts')->insertGetId([
+                    'htmlContent' => $textObject['text'],
+                    'index' => $textObject['index'],
+                ]);
+                DB::table('block_text')->insertGetId([
+                    'text_id' => $text_id,
+                    'block_id' => $block,
+                ]);
+            }
+            foreach ($presentation['pictures'] as $textObject) {
+                $text_id = DB::table('pictures')->insertGetId([
+                    'filename' => $textObject['filename'],
+                    'public_folder' => $textObject['public_folder'],
                     'index' => $textObject['index'],
                 ]);
                 DB::table('block_picture')->insertGetId([

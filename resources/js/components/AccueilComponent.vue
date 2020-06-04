@@ -152,8 +152,6 @@
                 screen: window.innerWidth,
             }
         },
-
-
         methods: {
             sizeHandler() {
                 this.screen = window.innerWidth;

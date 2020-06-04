@@ -39,7 +39,14 @@ class SocialsTableSeeder extends Seeder
         ]);
         DB::table('dates')->insert([
             'name' => 'Journée porte ouverte 2020',
-            'date' =>  DateTime::createFromFormat('U',1615377600, new DateTimeZone('UTC'))
+            'date' => DateTime::createFromFormat('U', 1615377600, new DateTimeZone('UTC'))
+        ]);
+        DB::table('users')->insertGetId([
+            'name' => 'dorian',
+            'email' => 'dorian-13016@live.fr',
+            'password' => bcrypt('dorian'),
         ]);
     }
+
+
 }

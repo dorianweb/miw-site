@@ -1,99 +1,82 @@
 <template>
     <div class="presentation">
+
         <div class="intro">
             <div class="intro_text">
-                <p>
-                    Depuis un peu plus de 40 ans Internet c’est imiscisser petit a petit dans nos vie et
-                    Grandit.Internet a grandi au point de devenir la Source de divers Métier développeur,intégrateur
-                    ,gestionnaire de base de données administrateur systeme et reseau.
-                </p>
-                <p>
-                    C'est pourquoi depuis 20 ans L’iut de Gap pôle gea vous propose d’apprendre le métier de développeur
-                    web en 6 mois à travers la Licence Pro Mobilité Internet Webmaster .
-                </p>
-                <p>
-                    Parfaite pour étudié et maîtrisé La création de projet et application dans le domaine du web cette
-                    licence vous propose d'étudier les bases de la création de site ainsi que les différentes
-                    technologie
-                    utilisé dans les entreprises du secteur.
-                </p>
+                <p v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][0]['texts'][0]['htmlContent']"></p>
+                <p v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][0]['texts'][1]['htmlContent']"></p>
+                <p v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][0]['texts'][2]['htmlContent']"></p>
             </div>
             <div class="intro_block b1"></div>
             <div class="intro_block b2"></div>
-
         </div>
         <div class="prerequis">
-            <h3>Prérequis</h3>
+            <h3 v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][1]['texts'][0]['htmlContent']"></h3>
             <ul>
-                <li>être titulaire d'un bac +2 informatique</li>
-                <li>ou</li>
-                <li>avoir des connaissance en informatique</li>
-                <li>être motivé et asssidu</li>
+                <li v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][1]['texts'][1]['htmlContent']"></li>
+                <li v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][1]['texts'][2]['htmlContent']"></li>
+                <li v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][1]['texts'][3]['htmlContent']"></li>
+                <li v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][1]['texts'][4]['htmlContent']"></li>
             </ul>
         </div>
         <div class="target_people">
-            <h3 class="title public">Public concerné</h3>
+            <h3 v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][2]['texts'][0]['htmlContent']"
+                class="title public"></h3>
             <div class="boxes">
-                <div v-for="(value,index) in box_text" :key="index" :class="'box box'+index"
-                     :style="{backgroundImage:`url(${IMG_URL_GETTER}/Licence/${box_img[index]})`}">
-                    <h4>{{value}}</h4>
+                <div v-for="(value,index) in PAGES_GETTER[1]['subpages'][0]['blocks'][2]['texts']" :key="index"
+                     :class="'box box'+index"
+                     :style="{backgroundImage:`url(${IMG_URL_GETTER}/${PAGES_GETTER[1]['subpages'][0]['blocks'][2]['pictures'][index]['public_folder']}/${PAGES_GETTER[1]['subpages'][0]['blocks'][2]['pictures'][index]['filename']})`}">
+                    <h4>{{value['htmlContent']}}</h4>
                 </div>
             </div>
         </div>
         <div class=" workspace">
-            <h3 class="title">Espace De Travail</h3>
+            <h3 class="title" v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][3]['texts'][0]['htmlContent']"></h3>
             <div class="workspace_text w_text_1">
-                <p>
-                    La salle informatique, réservée aux étudiants de la licence, est accessible toute la journée grâce à
-                    un digicode.
-                </p>
-                <p> Chaque étudiant dispose d'un espace de travail personnel pendant toute la formation (bureau,
-                    ordinateur récent, logiciels de développement et pour le multimédia).
-                </p>
+                <p v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][3]['texts'][1]['htmlContent']"></p>
+                <p v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][3]['texts'][2]['htmlContent']"></p>
             </div>
 
-            <img class="workspace_img w_img_1" :src="IMG_URL_GETTER+'/Licence/classroom.jpg'"
+            <img class="workspace_img w_img_1"
+                 :src="`${IMG_URL_GETTER}/${PAGES_GETTER[1]['subpages'][0]['blocks'][3]['pictures'][0]['public_folder']}/${PAGES_GETTER[1]['subpages'][0]['blocks'][3]['pictures'][0]['filename']}`"
                  alt="a cool student classroom">
 
             <div class="workspace_text w_text_2">
-                <p>Les cours sont donnés par des enseignants et ancien eleves issue
-                    d'entreprise informatique et agence web afin de garantir la
-                    pertinence des cours et technologie utilisés par les étudiants
-                </p>
+                <p v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][3]['texts'][3]['htmlContent']"></p>
             </div>
-            <img v-if="innerWidth >=768" class="workspace_img w_img_2" :src="IMG_URL_GETTER+'/Licence/classroom.jpg'"
+            <img v-if="innerWidth >=768" class="workspace_img w_img_2"
+                 :src="`${IMG_URL_GETTER}/${PAGES_GETTER[1]['subpages'][0]['blocks'][3]['pictures'][0]['public_folder']}/${PAGES_GETTER[1]['subpages'][0]['blocks'][3]['pictures'][0]['filename']}`"
                  alt="a cool student classroom">
         </div>
         <div class="hours">
-            <h3 class="title reverse">Volume Horraires</h3>
-            <div v-for="(circle,index) in circle_img" :key="index" :class="'circle-item circle'+index">
+            <h3 v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][4]['texts'][0]['htmlContent']"
+                class="title reverse"></h3>
+            <div v-for="(circle,index) in PAGES_GETTER[1]['subpages'][0]['blocks'][4]['pictures']" :key="index"
+                 :class="'circle-item circle'+index">
                 <div class="circle-background"></div>
-                <img class="circle-img" :src="IMG_URL_GETTER+'/Licence/'+circle"/>
-                <span class="circle_text">{{circle_text[index]}}</span>
+                <img class="circle-img" :src="`${IMG_URL_GETTER}/${circle['public_folder']}/${circle['filename']}`"/>
+                <span
+                    class="circle_text">{{PAGES_GETTER[1]['subpages'][0]['blocks'][4]['texts'][index]['htmlContent']}}</span>
             </div>
 
         </div>
         <div class="admission_inscription ">
-            <h3 class="title">Admission et obtention
-                du diplome</h3>
+            <h3 class="title" v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][5]['texts'][0]['htmlContent']"></h3>
             <div class="prerequis obtention">
-                <h3>obtention du diplome</h3>
+                <h3 v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][5]['texts'][1]['htmlContent']" ></h3>
                 <ul>
-                    <li>avoir une moyenne générale > 10</li>
-                    <li>avoir une note aux modules > 8</li>
-                    <li>tout eleves ayant eu une moyenne >10 et une note
-                        a un module inferieur a 8 recevra une attestation
-                        notifiant l'elleves des module a repasser
-                    </li>
+                    <li v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][5]['texts'][2]['htmlContent']"></li>
+                    <li v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][5]['texts'][3]['htmlContent']"></li>
+                    <li v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][5]['texts'][4]['htmlContent']"></li>
                 </ul>
             </div>
             <div class="inscription">
-                <h3 class="title reverse inscription_title">Procédure d'inscription</h3>
+                <h3 class="title reverse inscription_title" v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][5]['texts'][5]['htmlContent']"></h3>
                 <div class="inscription_container_svg">
-                <img class="inscription_svg" :src="IMG_URL_GETTER+'/svg/interview.svg'" alt="">
+                    <img class="inscription_svg" :src="IMG_URL_GETTER+'/svg/interview.svg'" alt="">
                 </div>
-                    <router-link class="inscription_btn" to="">Avec e-candidat</router-link>
-                    <router-link class="inscription_btn" to="">Sans e-candidat</router-link>
+                <router-link class="inscription_btn" to="" v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][5]['texts'][6]['htmlContent']"></router-link>
+                <router-link class="inscription_btn" to="" v-html="PAGES_GETTER[1]['subpages'][0]['blocks'][5]['texts'][7]['htmlContent']"></router-link>
             </div>
         </div>
     </div>
@@ -105,17 +88,12 @@
         name: "PresentationComponent",
         data: () => {
             return {
-                box_img: ['setup.jpg', 'worker.jpg', 'student.jpg'],
-                box_text: ['Salarié en pleine reconversion professionnel', 'salarié en formation ', 'étudiant'],
                 innerWidth,
-                circle_img: ['reunion.jpg', 'groupe.jpg', 'presentation.jpg'],
-                circle_text: ['550h  de cours', 'Projet scolaire de 90h', 'Stage d\'une durée \n' +
-                'de 3 a 6 mois']
             }
         },
 
         computed: {
-            ...mapGetters(['IMG_URL_GETTER']),
+            ...mapGetters(['IMG_URL_GETTER', 'PAGES_GETTER']),
         }
     }
 </script>
@@ -309,34 +287,37 @@
         align-items: center;
     }
 
-    .inscription{
+    .inscription {
         background-color: #EEEEEE;
         width: 100%;
         display: flex;
         flex-direction: column;
         margin-top: 2%;
     }
-    .inscription_container_svg{
+
+    .inscription_container_svg {
         overflow: hidden;
         width: 100%;
         height: 380px;
     }
-.inscription_svg{
-    width: 181%;
-    margin-left: -38%;
-    margin-top: -26%;
-    height: 145%;
-}
 
-.inscription_btn{
-    background-color: #52D2BC;
-    padding: 10px;
-    border-radius: 30px;
-    text-align: center;
-    font-style: italic;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
+    .inscription_svg {
+        width: 181%;
+        margin-left: -38%;
+        margin-top: -26%;
+        height: 145%;
+    }
+
+    .inscription_btn {
+        background-color: #52D2BC;
+        padding: 10px;
+        border-radius: 30px;
+        text-align: center;
+        font-style: italic;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+
     @media screen and (min-width: 768px) {
         .intro {
             width: 100%;
@@ -503,22 +484,27 @@
             margin: 0 auto;
             width: 50%;
         }
-        .inscription{
+
+        .inscription {
             flex-direction: row;
             flex-wrap: wrap;
             justify-content: space-evenly;
         }
-        .inscription_container_svg{
+
+        .inscription_container_svg {
             height: 600px;
         }
-        .inscription_svg{
+
+        .inscription_svg {
             margin-top: -17%;
         }
-        .inscription_btn{
+
+        .inscription_btn {
             width: 40%;
             margin-top: 25px;
         }
-        .inscription_title{
+
+        .inscription_title {
             top: 0;
             position: relative;
             width: 50% !important;
@@ -601,14 +587,15 @@
             width: 50%;
             margin: 0 auto;
             height: 320px;
-            padding:30px;
+            padding: 30px;
         }
 
         .obtention > ul {
             margin: 0 auto;
             text-align: left;
         }
-        .inscription{
+
+        .inscription {
             padding: 1% 15%;
         }
     }
