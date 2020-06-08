@@ -142,7 +142,8 @@
 
 
         computed: {
-            ...mapGetters(['IMG_URL_GETTER', 'PAGES_GETTER'])
+            ...mapGetters(['IMG_URL_GETTER', 'PAGES_GETTER']),
+
         },
 
 
@@ -157,6 +158,7 @@
                 this.screen = window.innerWidth;
             }
         },
+
 
     }
 </script>

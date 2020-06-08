@@ -12,8 +12,7 @@ let data = {
 
     state: {
         pages: '',
-        img_url: 'coucou',
-
+        img_url: '',
         auth: {
             isAuth: false,
             email: null,
@@ -27,7 +26,10 @@ let data = {
             text_val: '',
             updated: 'none',
         },
-
+        imgeditor: {
+            img_id: '',
+            file: '',
+        }
     },
 
     getters: {
@@ -45,7 +47,10 @@ let data = {
         },
         CKEDITOR_GETTER(state) {
             return state.ckeditor;
-        }
+        },
+        IMGEDITOR_GETTER(state) {
+            return state.imgeditor;
+        },
     },
 
     actions: {
@@ -86,9 +91,21 @@ let data = {
             });
             context.dispatch('PAGES_SETTER');
             this.dispatch('OBJECT_PROPERTY_SETTER', {objname: 'ckeditor', propname: 'updated', val: 'true'})
+        }, IMGEDITOR_SEND(context) {
+            axios.put(
+                `api/pictures/${this.state.imgeditor.img_id}`,
+                {img: this.state.imgeditor.file}
+            ).then(response =>
+                console.log(response)
+            ).catch(error => {
+                this.dispatch('OBJECT_PROPERTY_SETTER', {objname: 'ckeditor', propname: 'updated', val: 'false'})
+            });
+            context.dispatch('PAGES_SETTER');
+            this.dispatch('OBJECT_PROPERTY_SETTER', {objname: 'ckeditor', propname: 'updated', val: 'true'})
         },
+
         OBJECT_PROPERTY_SETTER(context, payload) {
-           context.commit('SET_OBJECT_PROPERTY',payload);
+            context.commit('SET_OBJECT_PROPERTY', payload);
         }
     },
 
@@ -115,8 +132,7 @@ let data = {
                 ...a,
             };
         },
-        SET_OBJECT_PROPERTY:(state, payload)=>{
-
+        SET_OBJECT_PROPERTY: (state, payload) => {
             state[payload.objname][payload.propname] = payload.val;
         },
     },

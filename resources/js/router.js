@@ -9,7 +9,8 @@ import LoginComponent from "./components/backend/pages/LoginComponent";
 import Store from './store/store';
 import MainComponent from "./components/backend/pages/TextsComponent";
 import PicturesCommponent from "./components/backend/pages/PicturesCommponent";
-import TextChangeComponent from "./components/backend/pages/TextChangeComponent";
+import TextChangeComponent from "./components/backend/pages/changes/TextChangeComponent";
+import PictureChangeComponent from "./components/backend/pages/changes/PictureChangeComponent";
 
 const check = (to, from, next) => {
     if (Store.state.auth.isAuth) {
@@ -63,9 +64,8 @@ export default {
                 {path: 'texts', component: MainComponent},
                 {path: 'pictures', component: PicturesCommponent},
                 {path: 'preview', component: PicturesCommponent},
-                {
-                    path: 'change', name: 'ckeditor', component: TextChangeComponent,
-                },
+                {path: 'change', name: 'ckeditor', component: TextChangeComponent,},
+                {path: 'changeimg', name: 'imgeditor', component: PictureChangeComponent,},
             ]
         },
     ]

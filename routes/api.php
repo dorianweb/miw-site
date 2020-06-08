@@ -23,6 +23,7 @@ Route::namespace('Api')->group(function () {
     Route::apiResource('dates', 'DateController');
     Route::apiResource('pages', 'PageController');
     Route::apiResource('texts', 'TextController');
+    Route::apiResource('pictures', 'PictureController');
 });
 
 Route::post('connect','AuthentificationController@auth');

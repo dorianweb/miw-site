@@ -1,0 +1,55 @@
+<template>
+    <div id="app">
+        <ckeditor :editor="editor" v-model="clone.text_val" :config="config"></ckeditor>
+        <button @click="update">Valider</button>
+        <div>{{clone.text_val}}</div>
+    </div>
+</template>
+
+<script>
+    import {mapActions, mapState} from 'vuex';
+    import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+    import '@ckeditor/ckeditor5-build-classic/build/translations/fr'
+
+    export default {
+        name: "TextChangeComponent",
+        data() {
+            return {
+                editor: ClassicEditor,
+                clone: '',
+                config: {
+                    language: 'fr',
+                    filebrowserBrowseUrl: '/templateEditor/kcfinder/browse.php?opener=ckeditor&type=files',
+                    filebrowserImageBrowseUrl: '/templateEditor/kcfinder/browse.php?opener=ckeditor&type=images',
+                    filebrowserFlashBrowseUrl: '/templateEditor/kcfinder/browse.php?opener=ckeditor&type=flash',
+                    filebrowserUploadUrl: '/templateEditor/kcfinder/upload.php?opener=ckeditor&type=files',
+                    filebrowserImageUploadUrl: '/templateEditor/kcfinder/upload.php?opener=ckeditor&type=images',
+                    filebrowserFlashUploadUrl: '/templateEditor/kcfinder/upload.php?opener=ckeditor&type=flash',
+                    removePlugins: ['easyimage, cloudservices'],
+                },
+            };
+        },
+        computed: {
+            ...mapState({
+                ckeditor: state => state.ckeditor
+            }),
+        },
+        methods: {
+            ...mapActions(['CKEDITOR_SETTER', 'CKEDITOR_SEND', 'PAGES_SETTER']),
+            update: async function () {
+                await this.CKEDITOR_SETTER(this.clone);
+                await this.CKEDITOR_SEND();
+                this.$router.push('texts');
+            }
+        },
+        created() {
+            this.clone = {...this.ckeditor};
+            ClassicEditor.builtinPlugins.map(plugin => console.log(plugin.pluginName));
+        }
+    }
+</script>
+<style scoped>
+    div {
+        width: 100%;
+    }
+</style>
