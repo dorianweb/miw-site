@@ -61,7 +61,7 @@
                 <p v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][1]['texts'][2]['htmlContent']" class="paragraphe"
                    v-show="screen>=1024"></p>
             </div>
-            <router-link to="#">
+            <router-link to="/presentation/débouché">
                 <button v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][1]['texts'][3]['htmlContent']"
                         class="item_btn"></button>
             </router-link>
@@ -79,18 +79,18 @@
 
             </div>
             <div class="item_group_btn">
-                <a href="">
+                <router-link to="/presentation/programme">
                     <button v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][2]['texts'][2]['htmlContent']"
                             class="item_btn"></button>
-                </a>
-                <a href="">
+                </router-link>
+                <router-link to="/presentation/débouché">
                     <button v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][2]['texts'][3]['htmlContent']"
                             class="item_btn"></button>
-                </a>
-                <a href="#">
+                </router-link>
+                <router-link to="/presentation/candidater">
                     <button v-html="PAGES_GETTER[0]['subpages'][0]['blocks'][2]['texts'][4]['htmlContent']"
                             class="item_btn"></button>
-                </a>
+                </router-link>
             </div>
         </div>
         <div class="boxes">
