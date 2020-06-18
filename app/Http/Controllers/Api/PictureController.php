@@ -75,7 +75,6 @@ class PictureController extends Controller
             'img' => 'required'
         ]);
         $base64_image = $request->input('img');
-
         $picture = Picture::findOrFail($id);
         if (preg_match('/^data:image\/(\w+);base64,/', $base64_image)) {
             $aray = explode(',', $base64_image);
@@ -89,12 +88,8 @@ class PictureController extends Controller
             $picture->filename = $fileName;
             $picture->save();
 
-
-
             return $picture;
         }
-        return $request->all();
-        $file = $request->file('file');
     }
 
     /**

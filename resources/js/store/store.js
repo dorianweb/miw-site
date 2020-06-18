@@ -6,10 +6,8 @@ Vue.use(Vuex);
 const vuexLocal = new VuexPersistence({
     storage: window.localStorage
 });
-
 let data = {
     strict: true,
-
     state: {
         pages: '',
         img_url: '',
@@ -31,7 +29,6 @@ let data = {
             file: '',
         }
     },
-
     getters: {
         IMG_URL_GETTER(state) {
             return state.img_url;
@@ -52,7 +49,6 @@ let data = {
             return state.imgeditor;
         },
     },
-
     actions: {
         IMG_URL_SETTER(context, payload) {
             context.commit('SET_IMG_URL', payload);
@@ -108,7 +104,6 @@ let data = {
             context.commit('SET_OBJECT_PROPERTY', payload);
         }
     },
-
     mutations: {
         SET_IMG_URL: (state, {img}) => {
             state.img_url = img;
@@ -137,6 +132,8 @@ let data = {
         },
     },
 };
+
+
 
 export default new Vuex.Store({
     ...data,

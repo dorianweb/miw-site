@@ -17,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::post('connect','AuthentificationController@auth');
+Route::get('auth_user','AuthentificationController@user');
+
 
 Route::namespace('Api')->group(function () {
     Route::apiResource('socials', 'SocialController');
@@ -25,9 +28,6 @@ Route::namespace('Api')->group(function () {
     Route::apiResource('texts', 'TextController');
     Route::apiResource('pictures', 'PictureController');
 });
-
-Route::post('connect','AuthentificationController@auth');
-Route::get('auth_user','AuthentificationController@user');
 
 
 

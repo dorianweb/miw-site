@@ -1,7 +1,10 @@
 <template>
     <div id="app">
-        <ckeditor :editor="editor" v-model="clone.text_val" :config="config"></ckeditor>
+        <button type="button" @click="selected_editor=!selected_editor">Changez d'éditeur ( permet des option en plus )</button>
+
+        <ckeditor v-if="selected_editor" :editor="editor" v-model="clone.text_val" :config="config"></ckeditor>
         <button @click="update">Valider</button>
+        <editor v-if="!selected_editor" v-model="clone.text_val" :value="clone.text_val"></editor>
         <div>{{clone.text_val}}</div>
     </div>
 </template>
@@ -15,17 +18,16 @@
         name: "TextChangeComponent",
         data() {
             return {
+                selected_editor:true,
                 editor: ClassicEditor,
                 clone: '',
                 config: {
                     language: 'fr',
-                    filebrowserBrowseUrl: '/templateEditor/kcfinder/browse.php?opener=ckeditor&type=files',
-                    filebrowserImageBrowseUrl: '/templateEditor/kcfinder/browse.php?opener=ckeditor&type=images',
-                    filebrowserFlashBrowseUrl: '/templateEditor/kcfinder/browse.php?opener=ckeditor&type=flash',
-                    filebrowserUploadUrl: '/templateEditor/kcfinder/upload.php?opener=ckeditor&type=files',
-                    filebrowserImageUploadUrl: '/templateEditor/kcfinder/upload.php?opener=ckeditor&type=images',
-                    filebrowserFlashUploadUrl: '/templateEditor/kcfinder/upload.php?opener=ckeditor&type=flash',
                     removePlugins: ['easyimage, cloudservices'],
+                    ckfinder: {
+                        uploadUrl: CKFinder._config.connectorPath + '?command=QuickUpload&type=Files'
+                    },
+                    toolbar: ['ckfinder', '|', 'heading', '|', 'bold', 'italic', '|', 'undo', 'redo','|','link','list']
                 },
             };
         },
@@ -44,7 +46,9 @@
         },
         created() {
             this.clone = {...this.ckeditor};
-            ClassicEditor.builtinPlugins.map(plugin => console.log(plugin.pluginName));
+           //ClassicEditor.builtinPlugins.map(plugin => console.log(plugin.pluginName));
+         console.log(Array.from( this.editor.ui.componentFactory.names()) );
+
         }
     }
 </script>

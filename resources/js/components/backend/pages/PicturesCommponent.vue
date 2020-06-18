@@ -21,8 +21,7 @@
         computed: {
             ...mapGetters(['IMG_URL_GETTER', 'PAGES_GETTER']),
             vue_blocks: function () {
-                let temp;
-                let temp2;
+                let temp , temp2;
                 temp = this.PAGES_GETTER.filter(element => element.id == this.page)[0];
                 temp2 = temp.subpages.filter(element => element.id == this.subpage);
                 if (this.subpage != "" && this.subpage != undefined) {

@@ -56,7 +56,7 @@
                 <div class="circle-background"></div>
                 <img class="circle-img" :src="`${IMG_URL_GETTER}/${circle['public_folder']}/${circle['filename']}`"/>
                 <span
-                    class="circle_text">{{PAGES_GETTER[1]['subpages'][0]['blocks'][4]['texts'][index]['htmlContent']}}</span>
+                    class="circle_text">{{PAGES_GETTER[1]['subpages'][0]['blocks'][4]['texts'][index+1]['htmlContent']}}</span>
             </div>
 
         </div>

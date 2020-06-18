@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', 'miw')),
+    'stateful' => explode(',', env('SANCTUM_STATEFUL_DOMAINS', null)),
 
     /*
     |--------------------------------------------------------------------------

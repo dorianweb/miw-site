@@ -30,5 +30,6 @@
 </style>
 <script src="{{ asset('js/app.js') }}" defer></script>
 @include('sprite')
+@include('ckfinder::setup')
 </body>
 </html>

@@ -11,7 +11,43 @@ import MainComponent from "./components/backend/pages/TextsComponent";
 import PicturesCommponent from "./components/backend/pages/PicturesCommponent";
 import TextChangeComponent from "./components/backend/pages/changes/TextChangeComponent";
 import PictureChangeComponent from "./components/backend/pages/changes/PictureChangeComponent";
+import PreviewComponent from "./components/backend/pages/PreviewComponent";
 
+export default {
+    mode: 'history',
+
+    routes: [
+        {path: '/', redirect: '/accueil',},
+        {path: '/accueil', name: 'Accueil', component: AccueilComponent,},
+        {
+            path: '/presentation',
+            name: 'Presentation',
+            component: LicenceComponent,
+            children: [
+                {path: '', redirect: 'presentation'},
+                {path: 'presentation', component: PresentationComponent},
+                {path: 'débouché', component: CompetenceComponent},
+                {path: 'programme', component: ProgrammeComponent},
+                {path: 'livret-or', component: PreviewComponent},
+                {path: 'candidater', component: MetierComponent},
+            ]
+        },
+        {
+            path: '/backend',
+            name: 'Backend',
+            component: BackendComponent,
+            beforeEnter: (to, from, next) => check(to, from, next),
+            children: [
+                {path: 'login', component: LoginComponent},
+                {path: 'texts', component: MainComponent},
+                {path: 'pictures', component: PicturesCommponent},
+                {path: 'preview', component: PreviewComponent},
+                {path: 'change', name: 'ckeditor', component: TextChangeComponent,},
+                {path: 'changeimg', name: 'imgeditor', component: PictureChangeComponent,},
+            ]
+        },
+    ]
+}
 const check = (to, from, next) => {
     if (Store.state.auth.isAuth) {
         if (to.fullPath == '/backend/login') {
@@ -26,47 +62,4 @@ const check = (to, from, next) => {
             next('backend/login')
         }
     }
-
 };
-export default {
-    mode: 'history',
-
-    routes: [
-        {
-            path: '/',
-            redirect: '/accueil',
-        },
-        {
-            path: '/accueil',
-            name: 'Accueil',
-            component: AccueilComponent,
-        },
-        {
-            path: '/presentation',
-            name: 'Presentation',
-            component: LicenceComponent,
-            children: [
-                {path: '', component: PresentationComponent},
-                {path: 'presentation', component: PresentationComponent},
-                {path: 'debouché', component: CompetenceComponent},
-                {path: 'programme', component: ProgrammeComponent},
-                {path: 'livret-dor', component: MetierComponent},
-            ]
-        },
-
-        {
-            path: '/backend',
-            name: 'Backend',
-            component: BackendComponent,
-            beforeEnter: (to,from,next)=>check(to, from, next),
-            children: [
-                {path: 'login', component: LoginComponent},
-                {path: 'texts', component: MainComponent},
-                {path: 'pictures', component: PicturesCommponent},
-                {path: 'preview', component: PicturesCommponent},
-                {path: 'change', name: 'ckeditor', component: TextChangeComponent,},
-                {path: 'changeimg', name: 'imgeditor', component: PictureChangeComponent,},
-            ]
-        },
-    ]
-}

@@ -1,6 +1,4 @@
 <template>
-
-
     <nav class="menu">
         <div :class=" isScrolling?'menu_head scrollEffect':'menu_head' ">
             <div class="menu_head_logo">
@@ -46,7 +44,6 @@
             </ul>
         </div>
     </nav>
-
 </template>
 
 <script>

@@ -73,7 +73,6 @@ class TextController extends Controller
         $request->validate([
             'text_val' => 'required'
         ]);
-
         if(!Auth::user()){
             return false;
         }

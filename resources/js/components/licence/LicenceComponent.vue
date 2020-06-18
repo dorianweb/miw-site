@@ -4,11 +4,10 @@
 
             <h2 class="page_title">La Licence</h2>
             <ul class="subnav_radio">
-                <li v-for="(value,index) in tabs" :key="index" class="">
+                <li v-for="value in tabs" :key="value" class="">
                     <router-link @click="" :to="`/presentation/${value.toLowerCase()}`"
-                                 :key="value"
-                                 :class="`subnav_radio_label ${value.toLowerCase()== $route.fullPath.split('/')[1]?'licence_radio_selected' :''}`">
-                        {{value}}
+                                 :class="['subnav_radio_label ',currentPath.includes(value)?activeClass :'']">
+                        {{value.charAt(0).toUpperCase() + value.slice(1)}}
                     </router-link>
                 </li>
             </ul>
@@ -1574,20 +1573,35 @@
                 </svg>
             </div>
         </div>
-        <router-view></router-view>
-
+        <router-view :key="$route.fullPath"></router-view>
     </div>
 </template>
 
 <script>
+    import {mapGetters} from 'vuex'
 
     export default {
         name: "LicenceComponent",
         props: [],
         data() {
             return {
-                tabs: ['Presentation', 'Programme', 'Competences', 'Metiers'],
+                activeClass: 'router-link-active',
             }
+        },
+        computed: {
+            ...mapGetters(['PAGES_GETTER']),
+            tabs: function () {
+                let temp, temp2;
+                temp = this.PAGES_GETTER.filter(element => element.name == 'Presentation')[0];
+                temp2 = [];
+                temp.subpages.forEach(element => {
+                    temp2.push(element.name);
+                });
+                return temp2;
+            },
+            currentPath: function () {
+                return this.$route.path.split('/')[2];
+            },
         },
 
     }
@@ -1628,7 +1642,7 @@
         font-size: 1em;
     }
 
-    .licence_radio_selected {
+    .router-link-active {
         color: #67bbda;
         margin-left: 27px;
         font-size: 1.2em;

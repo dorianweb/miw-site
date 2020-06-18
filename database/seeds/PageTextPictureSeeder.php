@@ -15,11 +15,10 @@ class PageTextPictureSeeder extends Seeder
         $pages = ['Accueil', 'Presentation', 'Contact', 'Actualite'];
         $subpages = [
             'Accueil' => ['accueil'],
-            'Presentation' => ['presentation', 'programme', 'débouché', 'Dossier candidature', 'livret d\' or'],
+            'Presentation' => ['presentation', 'programme', 'débouché', 'candidater', 'livret-or'],
             'Contact' => ['contact'],
             'Actualite' => ['actualite']
         ];
-
         foreach ($pages as $page) {
             $dbpage = DB::table('pages')->insertGetId([
                 'name' => $page,
@@ -32,8 +31,6 @@ class PageTextPictureSeeder extends Seeder
 
             }
         }
-
-
         $content_pages = [
             'accueil' => [
                 'texts' => [
@@ -57,7 +54,6 @@ class PageTextPictureSeeder extends Seeder
                     ['filename' => 'iMac2.png', 'public_folder' => 'Accueil', 'index' => 1],
                 ],
             ],
-
             'screen3' => [
                 'texts' => [
                     ['text' => 'Pourquoi choisir cette formation ?', 'index' => 1],
@@ -91,7 +87,6 @@ class PageTextPictureSeeder extends Seeder
                 ],
             ],
         ];
-
         foreach ($content_pages as $key => $content_page) {
             $accueil = \App\Subpage::all()->where('name', 'accueil')[0];
             $block = DB::table('blocks')->insertGetId([
@@ -101,7 +96,6 @@ class PageTextPictureSeeder extends Seeder
                 'block_id' => $block,
                 'subpage_id' => $accueil->id
             ]);
-
 
             foreach ($content_page['texts'] as $textObject) {
                 $text_id = DB::table('texts')->insertGetId([
@@ -125,7 +119,6 @@ class PageTextPictureSeeder extends Seeder
                 ]);
             }
         }
-
         $presentations = [
             'intro' => [
                 'texts' => [
@@ -197,7 +190,7 @@ class PageTextPictureSeeder extends Seeder
                 ],
             ],
         ];
-        foreach ( $presentations as $key => $presentation) {
+        foreach ($presentations as $key => $presentation) {
             $accueil = \App\Subpage::all()->where('name', 'presentation')[1];
             $block = DB::table('blocks')->insertGetId([
                 'name' => $key
@@ -206,7 +199,6 @@ class PageTextPictureSeeder extends Seeder
                 'block_id' => $block,
                 'subpage_id' => $accueil->id
             ]);
-
 
             foreach ($presentation['texts'] as $textObject) {
                 $text_id = DB::table('texts')->insertGetId([
@@ -230,5 +222,89 @@ class PageTextPictureSeeder extends Seeder
                 ]);
             }
         }
+        $accueil = \App\Subpage::all()->where('name', 'programme')[2];
+        $block = DB::table('blocks')->insertGetId([
+            'name' => 'programme'
+        ]);
+        DB::table('block_subpage')->insertGetId([
+            'block_id' => $block,
+            'subpage_id' => $accueil->id
+        ]);
+        $text_id = DB::table('texts')->insertGetId([
+            'htmlContent' => '0',
+            'index' => 1,
+        ]);
+        DB::table('block_text')->insertGetId([
+            'text_id' => $text_id,
+            'block_id' => $block,
+        ]);
+
+        $accueil = \App\Subpage::all()->where('name', 'débouché')[3];
+        $block = DB::table('blocks')->insertGetId([
+            'name' => 'debouche'
+        ]);
+        DB::table('block_subpage')->insertGetId([
+            'block_id' => $block,
+            'subpage_id' => $accueil->id
+        ]);
+        $text_id = DB::table('texts')->insertGetId([
+            'htmlContent' => '0',
+            'index' => 1,
+        ]);
+        DB::table('block_text')->insertGetId([
+            'text_id' => $text_id,
+            'block_id' => $block,
+        ]);
+
+        $accueil = \App\Subpage::all()->where('name', 'candidater')[4];
+        $block = DB::table('blocks')->insertGetId([
+            'name' => 'debouche'
+        ]);
+        DB::table('block_subpage')->insertGetId([
+            'block_id' => $block,
+            'subpage_id' => $accueil->id
+        ]);
+        $text_id = DB::table('texts')->insertGetId([
+            'htmlContent' => '0',
+            'index' => 1,
+        ]);
+        DB::table('block_text')->insertGetId([
+            'text_id' => $text_id,
+            'block_id' => $block,
+        ]);
+
+        $accueil = \App\Subpage::all()->where('name', 'livret-or')[5];
+        $block = DB::table('blocks')->insertGetId([
+            'name' => 'debouche'
+        ]);
+        DB::table('block_subpage')->insertGetId([
+            'block_id' => $block,
+            'subpage_id' => $accueil->id
+        ]);
+        $text_id = DB::table('texts')->insertGetId([
+            'htmlContent' => '0',
+            'index' => 1,
+        ]);
+        DB::table('block_text')->insertGetId([
+            'text_id' => $text_id,
+            'block_id' => $block,
+        ]);
+      $accueil = \App\Subpage::all()->where('name', 'contact')[6];
+        $block = DB::table('blocks')->insertGetId([
+            'name' => 'debouche'
+        ]);
+        DB::table('block_subpage')->insertGetId([
+            'block_id' => $block,
+            'subpage_id' => $accueil->id
+        ]);
+        $text_id = DB::table('texts')->insertGetId([
+            'htmlContent' => '0',
+            'index' => 1,
+        ]);
+        DB::table('block_text')->insertGetId([
+            'text_id' => $text_id,
+            'block_id' => $block,
+        ]);
+
     }
 }

@@ -12,7 +12,7 @@ For licensing, see LICENSE.html or https://ckeditor.com/sales/license/ckfinder
 <body>
 
 @include('ckfinder::setup')
-
+<script src="{{asset('ckeditor.js')}}"></script>
 <script>
 	CKFinder.start();
 </script>
